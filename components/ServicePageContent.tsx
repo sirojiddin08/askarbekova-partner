@@ -148,7 +148,11 @@ export default function ServicePageContent({ service }: Props) {
               <div className={styles.ctaCard}>
                 <h3>{ui.ctaTitle}</h3>
                 <p>{ui.ctaDesc}</p>
-                <a href="tel:+998712345678" className={styles.ctaButton}>
+                <a 
+                  href="tel:+998712345678" 
+                  className={styles.ctaButton}
+                  onClick={() => (window as any).gtag_report_conversion?.('tel:+998712345678')}
+                >
                   <FiPhone />
                   {ui.ctaButton}
                 </a>

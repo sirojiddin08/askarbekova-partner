@@ -60,14 +60,22 @@ export default function Header() {
                     ))}
                     <div className={styles.mobileActions}>
                         <LanguageSwitcher />
-                        <a href="tel:+998977789540" className={`btn btn-primary ${styles.navCta}`}>
+                        <a 
+                            href="tel:+998977789540" 
+                            className={`btn btn-primary ${styles.navCta}`}
+                            onClick={() => (window as any).gtag_report_conversion?.('tel:+998977789540')}
+                        >
                             {t("nav.call")}
                         </a>
                     </div>
                 </nav>
 
                 <div className={styles.headerActions}>
-                    <a href="tel:+998977789540" className={`btn btn-primary ${styles.ctaDesktop}`}>
+                    <a 
+                        href="tel:+998977789540" 
+                        className={`btn btn-primary ${styles.ctaDesktop}`}
+                        onClick={() => (window as any).gtag_report_conversion?.('tel:+998977789540')}
+                    >
                         {t("nav.call")}
                     </a>
                     <div className={styles.langSwitcherDesktop}>

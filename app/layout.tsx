@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -570,6 +571,46 @@ export default function RootLayout({
                 <link rel="apple-touch-icon" href="/logo.png" />
             </head>
             <body>
+                {/* Google Ads Global Site Tag */}
+                <Script
+                    strategy="afterInteractive"
+                    src="https://www.googletagmanager.com/gtag/js?id=AW-17856716490"
+                />
+                <Script
+                    id="google-ads-init"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'AW-17856716490');
+                        `,
+                    }}
+                />
+                
+                {/* Google Ads Conversion Tracking */}
+                <Script
+                    id="google-ads-conversion"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            function gtag_report_conversion(url) {
+                                var callback = function () {
+                                    if (typeof(url) != 'undefined') {
+                                        window.location = url;
+                                    }
+                                };
+                                gtag('event', 'conversion', {
+                                    'send_to': 'AW-17856716490/d_FfCJj9g94bEMq938JC',
+                                    'event_callback': callback
+                                });
+                                return false;
+                            }
+                        `,
+                    }}
+                />
+
                 <LanguageProvider>
                     <DynamicLang />
                     <Header />

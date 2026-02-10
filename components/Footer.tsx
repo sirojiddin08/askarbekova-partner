@@ -59,7 +59,11 @@ export default function Footer() {
                     <div className={styles.col}>
                         <h4 className={styles.colTitle}>{t("contact.label")}</h4>
                         <div className={styles.contactList}>
-                            <a href="tel:+998977789540" className={styles.contactItem}>
+                            <a 
+                                href="tel:+998977789540" 
+                                className={styles.contactItem}
+                                onClick={() => (window as any).gtag_report_conversion?.('tel:+998977789540')}
+                            >
                                 <FiPhone />
                                 +998 97 778 95 40
                             </a>

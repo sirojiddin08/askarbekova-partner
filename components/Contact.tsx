@@ -127,7 +127,11 @@ export default function Contact() {
                         <h3 className={styles.ctaTitle}>{t("contact.ctaTitle")}</h3>
                         <p className={styles.ctaDesc}>{t("contact.ctaDesc")}</p>
                     </div>
-                    <a href="tel:+998977789540" className="btn btn-primary">
+                    <a 
+                        href="tel:+998977789540" 
+                        className="btn btn-primary"
+                        onClick={() => (window as any).gtag_report_conversion?.('tel:+998977789540')}
+                    >
                         <FiPhone />
                         +998 97 778 95 40
                     </a>

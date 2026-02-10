@@ -141,7 +141,11 @@ export default function ServicesListingContent() {
           >
             <h2 className={styles.ctaTitle}>{ui.ctaTitle}</h2>
             <p className={styles.ctaDesc}>{ui.ctaDesc}</p>
-            <a href="tel:+998712345678" className={styles.ctaButton}>
+            <a 
+              href="tel:+998712345678" 
+              className={styles.ctaButton}
+              onClick={() => (window as any).gtag_report_conversion?.('tel:+998712345678')}
+            >
               <FiPhone />
               {ui.ctaButton}
             </a>
