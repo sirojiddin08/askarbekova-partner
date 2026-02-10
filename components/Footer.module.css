@@ -1,0 +1,154 @@
+.footer {
+    background: var(--navy-950);
+    padding: 80px 0 0;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 48px;
+}
+
+/* Brand */
+.brand {
+    max-width: 280px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 16px;
+}
+
+.logoIcon {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(201, 169, 110, 0.4));
+}
+
+.logoText {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+.logoAccent {
+    color: var(--gold-500);
+}
+
+.brandDesc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* Columns */
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.colTitle {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--gold-500);
+}
+
+/* Contact items */
+.contactList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.contactItem:hover {
+    color: var(--gold-500);
+}
+
+.contactItem svg {
+    color: var(--gold-500);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Bottom bar */
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.copy {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.legal {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .brand {
+        max-width: 100%;
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}

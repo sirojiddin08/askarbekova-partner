@@ -1,0 +1,131 @@
+.faq {
+    background: var(--navy-900);
+    position: relative;
+}
+
+.list {
+    max-width: 900px;
+    margin: 64px auto 0;
+}
+
+.item {
+    background: rgba(15, 32, 53, 0.5);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+    transition: all var(--transition-fast);
+}
+
+.item:hover {
+    border-color: var(--border-gold);
+    background: rgba(15, 32, 53, 0.7);
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+    color: var(--text-primary);
+}
+
+.question:hover {
+    color: var(--gold-300);
+}
+
+.question.active {
+    color: var(--gold-400);
+}
+
+.questionText {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 600;
+    line-height: 1.5;
+    color: inherit;
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(201, 169, 110, 0.15);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    font-size: 1.1rem;
+    color: var(--gold-400);
+    transition: all var(--transition-fast);
+}
+
+.question:hover .icon {
+    background: rgba(201, 169, 110, 0.25);
+    border-color: var(--gold-400);
+    transform: rotate(90deg);
+}
+
+.question.active .icon {
+    background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+    border-color: var(--gold-400);
+    color: var(--navy-950);
+    transform: rotate(180deg);
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+}
+
+.answerWrapper {
+    overflow: hidden;
+}
+
+.answer {
+    padding: 0 28px 28px 28px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .list {
+        margin-top: 48px;
+    }
+
+    .item {
+        margin-bottom: 12px;
+    }
+
+    .question {
+        padding: 20px 20px;
+        gap: 16px;
+    }
+
+    .questionText {
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .answer {
+        padding: 16px 20px 24px 20px;
+        font-size: 0.95rem;
+    }
+}
+

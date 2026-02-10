@@ -1,0 +1,83 @@
+.whyUs {
+    background: var(--navy-950);
+    position: relative;
+}
+
+.whyUs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.pillar {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pillarIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 20px;
+    transition: transform var(--transition-fast);
+}
+
+.pillar:hover .pillarIcon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.pillarTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.pillarDesc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.pillarLine {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.pillar:hover .pillarLine {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

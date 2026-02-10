@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Askarbekova Partner — Advokatlik Firmasi
+
+Professional law firm website built with Next.js for [askarbekova-partner.uz](https://askarbekova-partner.uz).
+
+## About
+
+**Askarbekova Partner** is a professional law firm based in Tashkent, Uzbekistan with 35+ years of experience. This website provides information about the firm's legal services, team, and contact details.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, Turbopack)
+- **Language:** TypeScript
+- **UI:** React 19, Framer Motion, CSS Modules
+- **Fonts:** Inter (body), Outfit (headings) via Google Fonts
+- **i18n:** Custom LanguageContext (Uzbek, Russian, English) with localStorage
+- **Images:** `next/image` optimization
+
+## Features
+
+- **Multi-language Support** — Full 3-language support (UZ / RU / EN), Russian default
+- **SEO Optimized** — JSON-LD schemas (LegalService, Organization, FAQPage, BreadcrumbList, Reviews, Services), Open Graph, Twitter Cards, hreflang, geo meta tags, sitemap, robots.txt
+- **Responsive Design** — Mobile-first, works on all screen sizes
+- **Sections:** Hero, About, Services (6), Why Us (6), Team, FAQ (9 questions), Contact with Google Maps
+- **Performance:** next/image, font preloading, static generation
+- **Accessibility:** ARIA labels, semantic HTML landmarks, keyboard navigation
+- **PWA Ready:** manifest.json, theme-color, apple-touch-icon
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx        # Root layout with metadata & structured data
+  page.tsx          # Home page
+  globals.css       # Global styles & design tokens
+  sitemap.ts        # Dynamic sitemap generation
+  robots.ts         # Robots.txt configuration
+components/
+  Header.tsx        # Navigation with language switcher & CTA
+  Hero.tsx          # Two-column hero with lawyer photo
+  About.tsx         # About section with 4 feature cards
+  Services.tsx      # 6 legal service cards
+  WhyUs.tsx         # 6 advantages/pillars
+  Team.tsx          # Team members grid
+  FAQ.tsx           # Accordion FAQ (9 questions)
+  Contact.tsx       # Contact info & Google Maps embed
+  Footer.tsx        # Site footer
+  LanguageSwitcher.tsx  # Dropdown language selector with SVG flags
+  DynamicLang.tsx   # Dynamic html lang attribute updater
+contexts/
+  LanguageContext.tsx   # i18n provider with translations
+public/
+  logo.svg          # Law firm logo (scales of justice)
+  favicon.png       # Browser tab icon
+  lawyer-hero.webp  # Hero section lawyer photo
+  manifest.json     # PWA manifest
+  team/             # Team member photos
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Build and deploy to any Node.js hosting or static hosting:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Compatible with Vercel, Netlify, and any Node.js server.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All rights reserved © Askarbekova Partner
