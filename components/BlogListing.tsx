@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { blogPosts } from "@/lib/blog-data";
@@ -74,6 +75,12 @@ export default function BlogListing() {
           {filteredPosts.map((post) => (
             <article key={post.slug} className={styles.blogCard}>
               <div className={styles.cardImage}>
+                <Image
+                  src={post.image}
+                  alt={post.content[language].title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
                 <div className={styles.categoryBadge}>{post.category}</div>
               </div>
               <div className={styles.cardContent}>

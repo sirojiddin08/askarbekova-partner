@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { BlogPost } from "@/lib/blog-data";
@@ -73,7 +74,17 @@ export default function BlogPostContent({ post }: Props) {
 
         {/* Header */}
         <header className={styles.postHeader}>
-          <div className={styles.categoryBadge}>{post.category}</div>
+          <div className={styles.heroImage}>
+            <Image
+              src={post.image}
+              alt={content.title}
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+            <div className={styles.heroOverlay} />
+            <div className={styles.categoryBadge}>{post.category}</div>
+          </div>
           <h1>{content.title}</h1>
           <div className={styles.postMeta}>
             <div className={styles.metaItem}>
