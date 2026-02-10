@@ -46,12 +46,12 @@ export default function Footer() {
                     <div className={styles.col}>
                         <h4 className={styles.colTitle}>{t("nav.services")}</h4>
                         <nav className={styles.links}>
-                            <a href="#services">{t("services.economic")}</a>
-                            <a href="#services">{t("services.administrative")}</a>
-                            <a href="#services">{t("services.criminal")}</a>
-                            <a href="#services">{t("services.civil")}</a>
-                            <a href="#services">{t("services.inheritance")}</a>
-                            <a href="#services">{t("services.business")}</a>
+                            <a href="/xizmatlar/iqtisodiy-nizolar">{t("services.economic")}</a>
+                            <a href="/xizmatlar/mamuriy-nizolar">{t("services.administrative")}</a>
+                            <a href="/xizmatlar/jinoyat-ishlari">{t("services.criminal")}</a>
+                            <a href="/xizmatlar/fuqarolik-ishlari">{t("services.civil")}</a>
+                            <a href="/xizmatlar/meros-masalalari">{t("services.inheritance")}</a>
+                            <a href="/xizmatlar/biznes-yuridik-yordam">{t("services.business")}</a>
                         </nav>
                     </div>
 

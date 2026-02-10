@@ -186,6 +186,7 @@ const translations: Record<Language, any> = {
             inheritanceDesc: "Meros masalalari bo'yicha konsultatsiya, hujjatlar tayyorlash va nizolarni hal qilish.",
             business: "Biznes huquqiy yordam",
             businessDesc: "Biznes uchun kompleks yuridik xizmat ko'rsatish va huquqiy maslahatlar.",
+            learnMore: "Batafsil",
         },
     },
     ru: {
@@ -312,6 +313,7 @@ const translations: Record<Language, any> = {
             inheritanceDesc: "Консультации по вопросам наследства, подготовка документов и решение споров.",
             business: "Юридическая поддержка бизнеса",
             businessDesc: "Комплексное юридическое обслуживание и правовые консультации для бизнеса.",
+            learnMore: "Подробнее",
         },
     },
     en: {
@@ -368,6 +370,7 @@ const translations: Record<Language, any> = {
             inheritanceDesc: "Consultations on inheritance issues, document preparation and dispute resolution.",
             business: "Business Legal Support",
             businessDesc: "Comprehensive legal services and legal consultations for businesses.",
+            learnMore: "Learn more",
         },
         whyUs: {
             label: "Advantages",

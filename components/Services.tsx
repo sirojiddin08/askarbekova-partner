@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     FiTrendingUp,
@@ -8,6 +9,7 @@ import {
     FiHome,
     FiHeart,
     FiBriefcase,
+    FiArrowRight,
 } from "react-icons/fi";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Services.module.css";
@@ -29,31 +31,37 @@ export default function Services() {
             icon: <FiHome />,
             title: t("services.civil"),
             desc: t("services.civilDesc"),
+            slug: "fuqarolik-ishlari",
         },
         {
             icon: <FiShield />,
             title: t("services.criminal"),
             desc: t("services.criminalDesc"),
+            slug: "jinoyat-ishlari",
         },
         {
             icon: <FiTrendingUp />,
             title: t("services.economic"),
             desc: t("services.economicDesc"),
+            slug: "iqtisodiy-nizolar",
         },
         {
             icon: <FiFileText />,
             title: t("services.administrative"),
             desc: t("services.administrativeDesc"),
+            slug: "mamuriy-nizolar",
         },
         {
             icon: <FiHeart />,
             title: t("services.inheritance"),
             desc: t("services.inheritanceDesc"),
+            slug: "meros-masalalari",
         },
         {
             icon: <FiBriefcase />,
             title: t("services.business"),
             desc: t("services.businessDesc"),
+            slug: "biznes-yuridik-yordam",
         },
     ];
 
@@ -88,9 +96,14 @@ export default function Services() {
                             variants={cardVariants}
                             custom={i}
                         >
-                            <div className={styles.iconWrap}>{s.icon}</div>
-                            <h3 className={styles.cardTitle}>{s.title}</h3>
-                            <p className={styles.cardDesc}>{s.desc}</p>
+                            <Link href={`/xizmatlar/${s.slug}`} className={styles.cardLink}>
+                                <div className={styles.iconWrap}>{s.icon}</div>
+                                <h3 className={styles.cardTitle}>{s.title}</h3>
+                                <p className={styles.cardDesc}>{s.desc}</p>
+                                <span className={styles.cardArrow}>
+                                    {t("services.learnMore")} <FiArrowRight />
+                                </span>
+                            </Link>
                         </motion.article>
                     ))}
                 </motion.div>

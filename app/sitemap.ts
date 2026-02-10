@@ -1,8 +1,18 @@
 import type { MetadataRoute } from "next";
+import { getAllServiceSlugs } from "@/lib/services-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://askarbekova-partner.uz";
     const lastModified = new Date("2026-02-10");
+
+    const serviceSlugs = getAllServiceSlugs();
+
+    const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
+        url: `${baseUrl}/xizmatlar/${slug}`,
+        lastModified,
+        changeFrequency: "weekly" as const,
+        priority: 0.9,
+    }));
 
     return [
         {
@@ -11,6 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "weekly",
             priority: 1,
         },
+        {
+            url: `${baseUrl}/xizmatlar`,
+            lastModified,
+            changeFrequency: "weekly",
+            priority: 0.95,
+        },
+        ...servicePages,
         {
             url: `${baseUrl}/#about`,
             lastModified,

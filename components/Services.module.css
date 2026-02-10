@@ -22,7 +22,30 @@
 .card {
     display: flex;
     flex-direction: column;
-    cursor: default;
+    cursor: pointer;
+}
+
+.cardLink {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.cardArrow {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gold-400);
+    margin-top: auto;
+    transition: gap 0.2s;
+}
+
+.card:hover .cardArrow {
+    gap: 0.6rem;
 }
 
 .iconWrap {
