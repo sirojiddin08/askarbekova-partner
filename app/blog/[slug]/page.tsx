@@ -4,7 +4,7 @@ import { getBlogPostBySlug, getAllBlogSlugs } from "@/lib/blog-data";
 import BlogPostContent from "@/components/BlogPostContent";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -28,12 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.content.uz.metaDescription,
     keywords: post.content.uz.tags,
     alternates: {
-      canonical: `https://askarbekova-partner.uz/blog/${params.slug}`,
+      canonical: `https://askarbekova-partner.uz/blog/${slug}`,
     },
     openGraph: {
       title: post.content.uz.metaTitle,
       description: post.content.uz.metaDescription,
-      url: `https://askarbekova-partner.uz/blog/${params.slug}`,
+      url: `https://askarbekova-partner.uz/blog/${slug}`,
       siteName: "Askarbekova Partner",
       locale: "uz_UZ",
       type: "article",
@@ -51,8 +52,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -85,7 +87,7 @@ export default function BlogPostPage({ params }: Props) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://askarbekova-partner.uz/blog/${params.slug}`,
+      "@id": `https://askarbekova-partner.uz/blog/${slug}`,
     },
   };
 
@@ -110,7 +112,7 @@ export default function BlogPostPage({ params }: Props) {
         "@type": "ListItem",
         position: 3,
         name: post.content.uz.title,
-        item: `https://askarbekova-partner.uz/blog/${params.slug}`,
+        item: `https://askarbekova-partner.uz/blog/${slug}`,
       },
     ],
   };
