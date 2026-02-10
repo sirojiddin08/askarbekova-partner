@@ -122,6 +122,7 @@ export const metadata: Metadata = {
     },
     verification: {
         google: "your-google-verification-code",
+        yandex: "7c76e5297f4eba62",
     },
     category: "Legal Services",
     other: {
