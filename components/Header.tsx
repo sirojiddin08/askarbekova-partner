@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import styles from "./Header.module.css";
@@ -10,6 +12,8 @@ export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const { t } = useLanguage();
+    const pathname = usePathname();
+    const isHomePage = pathname === "/";
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -20,20 +24,20 @@ export default function Header() {
     const handleNavClick = () => setMobileOpen(false);
 
     const navLinks = [
-        { label: t("nav.home"), href: "#hero" },
-        { label: t("nav.about"), href: "#about" },
-        { label: t("nav.services"), href: "#services" },
+        { label: t("nav.home"), href: isHomePage ? "#hero" : "/#hero" },
+        { label: t("nav.about"), href: isHomePage ? "#about" : "/#about" },
+        { label: t("nav.services"), href: isHomePage ? "#services" : "/#services" },
         { label: t("nav.blog"), href: "/blog" },
-        { label: t("nav.whyUs"), href: "#why-us" },
-        { label: t("nav.team"), href: "#team" },
-        { label: t("nav.faq"), href: "#faq" },
-        { label: t("nav.contact"), href: "#contact" },
+        { label: t("nav.whyUs"), href: isHomePage ? "#why-us" : "/#why-us" },
+        { label: t("nav.team"), href: isHomePage ? "#team" : "/#team" },
+        { label: t("nav.faq"), href: isHomePage ? "#faq" : "/#faq" },
+        { label: t("nav.contact"), href: isHomePage ? "#contact" : "/#contact" },
     ];
 
     return (
         <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
             <div className={`container ${styles.inner}`}>
-                <a href="#hero" className={styles.logo}>
+                <Link href="/" className={styles.logo}>
                     <Image
                         src="/logo.svg"
                         alt="Askarbekova Partner logo"
@@ -46,19 +50,32 @@ export default function Header() {
                         <span className={styles.logoName}>Askarbekova</span>
                         <span className={styles.logoAccent}>Partner</span>
                     </span>
-                </a>
+                </Link>
 
                 <nav className={`${styles.nav} ${mobileOpen ? styles.navOpen : ""}`}>
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className={styles.navLink}
-                            onClick={handleNavClick}
-                        >
-                            {link.label}
-                        </a>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isExternal = link.href.startsWith('/');
+                        
+                        return isExternal ? (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={styles.navLink}
+                                onClick={handleNavClick}
+                            >
+                                {link.label}
+                            </Link>
+                        ) : (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className={styles.navLink}
+                                onClick={handleNavClick}
+                            >
+                                {link.label}
+                            </a>
+                        );
+                    })}
                     <div className={styles.mobileActions}>
                         <LanguageSwitcher />
                         <a 
