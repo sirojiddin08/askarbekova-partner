@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { blogPosts } from "@/lib/blog-data";
 import styles from "./BlogListing.module.css";
 
 export default function BlogListing() {
-  const [language, setLanguage] = useState<"uz" | "ru" | "en">("uz");
+  const { language } = useLanguage();
 
   const categories = [
     "Hammasi",
@@ -49,28 +50,6 @@ export default function BlogListing() {
   return (
     <section className={styles.blogListing}>
       <div className={styles.container}>
-        {/* Language Switcher */}
-        <div className={styles.languageSwitcher}>
-          <button
-            className={language === "uz" ? styles.active : ""}
-            onClick={() => setLanguage("uz")}
-          >
-            UZ
-          </button>
-          <button
-            className={language === "ru" ? styles.active : ""}
-            onClick={() => setLanguage("ru")}
-          >
-            RU
-          </button>
-          <button
-            className={language === "en" ? styles.active : ""}
-            onClick={() => setLanguage("en")}
-          >
-            EN
-          </button>
-        </div>
-
         {/* Header */}
         <div className={styles.header}>
           <h1>{text[language].title}</h1>

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 import type { BlogPost } from "@/lib/blog-data";
 import styles from "./BlogPostContent.module.css";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function BlogPostContent({ post }: Props) {
-  const [language, setLanguage] = useState<"uz" | "ru" | "en">("uz");
+  const { language } = useLanguage();
 
   const content = post.content[language];
 
@@ -70,28 +70,6 @@ export default function BlogPostContent({ post }: Props) {
           <span>/</span>
           <span>{content.title}</span>
         </nav>
-
-        {/* Language Switcher */}
-        <div className={styles.languageSwitcher}>
-          <button
-            className={language === "uz" ? styles.active : ""}
-            onClick={() => setLanguage("uz")}
-          >
-            UZ
-          </button>
-          <button
-            className={language === "ru" ? styles.active : ""}
-            onClick={() => setLanguage("ru")}
-          >
-            RU
-          </button>
-          <button
-            className={language === "en" ? styles.active : ""}
-            onClick={() => setLanguage("en")}
-          >
-            EN
-          </button>
-        </div>
 
         {/* Header */}
         <header className={styles.postHeader}>

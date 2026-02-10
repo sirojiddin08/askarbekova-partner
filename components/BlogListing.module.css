@@ -1,6 +1,6 @@
 .blogListing {
   padding: 100px 20px 80px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #0a1628 0%, #0f2035 100%);
   min-height: 100vh;
 }
 
@@ -19,17 +19,19 @@
 
 .languageSwitcher button {
   padding: 8px 16px;
-  background: white;
-  border: 2px solid #2c3e50;
+  background: rgba(201, 169, 110, 0.1);
+  border: 2px solid rgba(201, 169, 110, 0.3);
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  color: var(--text-secondary);
 }
 
 .languageSwitcher button.active {
-  background: #2c3e50;
-  color: white;
+  background: rgba(201, 169, 110, 0.2);
+  border-color: #c9a96e;
+  color: #c9a96e;
 }
 
 .languageSwitcher button:hover {
@@ -45,14 +47,14 @@
 
 .header h1 {
   font-size: 3rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 15px;
   font-weight: 800;
 }
 
 .header p {
   font-size: 1.2rem;
-  color: #546e7a;
+  color: var(--text-secondary);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -68,23 +70,23 @@
 
 .categoryFilter button {
   padding: 10px 20px;
-  background: white;
-  border: 2px solid #e0e0e0;
+  background: rgba(201, 169, 110, 0.08);
+  border: 2px solid rgba(201, 169, 110, 0.2);
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  color: #546e7a;
+  color: var(--text-secondary);
 }
 
 .categoryFilter button.active {
-  background: #2c3e50;
-  color: white;
-  border-color: #2c3e50;
+  background: rgba(201, 169, 110, 0.2);
+  color: #c9a96e;
+  border-color: #c9a96e;
 }
 
 .categoryFilter button:hover {
-  border-color: #2c3e50;
+  border-color: #c9a96e;
   transform: translateY(-2px);
 }
 
@@ -97,18 +99,20 @@
 }
 
 .blogCard {
-  background: white;
+  background: rgba(15, 32, 53, 0.7);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(201, 169, 110, 0.1);
 }
 
 .blogCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(201, 169, 110, 0.2);
+  border-color: rgba(201, 169, 110, 0.3);
 }
 
 .cardImage {
@@ -124,13 +128,13 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: white;
+  background: rgba(201, 169, 110, 0.9);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #2c3e50;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #0a1628;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cardContent {
@@ -145,13 +149,13 @@
   gap: 15px;
   margin-bottom: 15px;
   font-size: 0.85rem;
-  color: #78909c;
+  color: var(--text-muted);
   flex-wrap: wrap;
 }
 
 .author {
   font-weight: 600;
-  color: #2c3e50;
+  color: #c9a96e;
 }
 
 .date,
@@ -161,14 +165,14 @@
 
 .cardContent h2 {
   font-size: 1.4rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 12px;
   line-height: 1.4;
   font-weight: 700;
 }
 
 .excerpt {
-  color: #546e7a;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 20px;
   flex: 1;
@@ -191,15 +195,15 @@
 
 .tag {
   padding: 4px 10px;
-  background: #eceff1;
+  background: rgba(201, 169, 110, 0.15);
   border-radius: 12px;
   font-size: 0.75rem;
-  color: #546e7a;
+  color: #c9a96e;
   font-weight: 600;
 }
 
 .readMore {
-  color: #667eea;
+  color: #c9a96e;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -207,7 +211,7 @@
 }
 
 .readMore:hover {
-  color: #764ba2;
+  color: #d4af37;
   transform: translateX(4px);
 }
 
