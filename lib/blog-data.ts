@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 5,
     publishDate: "2026-02-10",
     author: "Gulshoda Askarbekova",
-    image: "/blog/criminal-defense.jpg",
+    image: "/blog/criminal-defense.webp",
     content: {
       uz: {
         title: "Jinoyat ishida advokat qachon kerak? | Toshkent 2026",
@@ -215,7 +215,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 6,
     publishDate: "2026-02-08",
     author: "Gulshoda Askarbekova",
-    image: "/blog/inheritance-law.jpg",
+    image: "/blog/inheritance-law.webp",
     content: {
       uz: {
         title: "Meros huquqini qanday himoya qilish mumkin? | To'liq qo'llanma 2026",
@@ -417,7 +417,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 4,
     publishDate: "2026-02-05",
     author: "Gulshoda Askarbekova",
-    image: "/blog/lawyer-costs.jpg",
+    image: "/blog/lawyer-costs.webp",
     content: {
       uz: {
         title: "Advokat xizmati qancha turadi Toshkentda? | Tarif 2026",
@@ -622,7 +622,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 5,
     publishDate: "2026-02-03",
     author: "Gulshoda Askarbekova",
-    image: "/blog/contract-mistakes.jpg",
+    image: "/blog/contract-mistakes.webp",
     content: {
       uz: {
         title: "Shartnoma tuzishda qanday xatolardan qochish kerak? | 2026",
@@ -833,7 +833,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 5,
     publishDate: "2026-02-01",
     author: "Gulshoda Askarbekova",
-    image: "/blog/civil-lawyer.jpg",
+    image: "/blog/civil-lawyer.webp",
     content: {
       uz: {
         title: "Fuqarolik ishida advokat zarurmi? | Professional maslahat 2026",

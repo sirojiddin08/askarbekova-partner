@@ -24,10 +24,7 @@ export default function Hero() {
 
             <div className={`container ${styles.content}`}>
                 {/* Left: Text block */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                <div
                     className={styles.textBlock}
                 >
                     <h1 className={styles.title}>
@@ -63,13 +60,10 @@ export default function Hero() {
                             <span className={styles.statLabel}>{t("hero.stat3")}</span>
                         </div>
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Right: Lawyer photo */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                <div
                     className={styles.imageBlock}
                 >
                     <div className={styles.imageWrapper}>
@@ -91,7 +85,7 @@ export default function Hero() {
                             <span className={styles.lawyerTagline}>{t("hero.lawyerTagline")}</span>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
 
             <motion.a
