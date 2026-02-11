@@ -33,7 +33,7 @@ const uiText = {
     title: "Yuridik xizmatlarimiz",
     subtitle: "35 yildan ortiq tajriba bilan barcha turdagi yuridik masalalar bo'yicha professional yordam ko'rsatamiz",
     arrow: "Batafsil",
-    ctaTitle: "Bepul konsultatsiya oling",
+    ctaTitle: "Konsultatsiya oling",
     ctaDesc: "Professional advokatlarimiz sizning masalangizni tahlil qiladi va eng to'g'ri yechimni topadi",
     ctaButton: "Qo'ng'iroq qilish",
   },
@@ -43,7 +43,7 @@ const uiText = {
     title: "Наши юридические услуги",
     subtitle: "Профессиональная помощь по всем видам юридических вопросов с опытом более 35 лет",
     arrow: "Подробнее",
-    ctaTitle: "Получите бесплатную консультацию",
+    ctaTitle: "Получите консультацию",
     ctaDesc: "Наши профессиональные адвокаты проанализируют вашу ситуацию и найдут оптимальное решение",
     ctaButton: "Позвонить",
   },
@@ -53,7 +53,7 @@ const uiText = {
     title: "Our Legal Services",
     subtitle: "Professional assistance in all types of legal matters with over 35 years of experience",
     arrow: "Learn more",
-    ctaTitle: "Get a Free Consultation",
+    ctaTitle: "Get a Consultation",
     ctaDesc: "Our professional lawyers will analyze your situation and find the best solution",
     ctaButton: "Call Now",
   },
@@ -141,8 +141,8 @@ export default function ServicesListingContent() {
           >
             <h2 className={styles.ctaTitle}>{ui.ctaTitle}</h2>
             <p className={styles.ctaDesc}>{ui.ctaDesc}</p>
-            <a 
-              href="tel:+998712345678" 
+            <a
+              href="tel:+998712345678"
               className={styles.ctaButton}
               onClick={() => (window as any).gtag_report_conversion?.('tel:+998712345678')}
             >

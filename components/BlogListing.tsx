@@ -127,10 +127,10 @@ export default function BlogListing() {
           </h2>
           <p>
             {language === "uz"
-              ? "Dastlabki konsultatsiya bepul. Bizga qo'ng'iroq qiling va professional advokat maslahatini oling."
+              ? "Bizga qo'ng'iroq qiling va professional advokat maslahatini oling."
               : language === "ru"
-              ? "Первичная консультация бесплатная. Позвоните нам и получите консультацию профессионального адвоката."
-              : "Initial consultation is free. Call us and get professional lawyer consultation."}
+              ? "Позвоните нам и получите консультацию профессионального адвоката."
+              : "Call us and get professional lawyer consultation."}
           </p>
           <a
             href="tel:+998977789540"

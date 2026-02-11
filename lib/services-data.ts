@@ -50,7 +50,7 @@ export const servicesData: ServicePageData[] = [
             uz: {
                 title: "Fuqarolik ishlari",
                 metaTitle: "Fuqarolik ishlari bo'yicha advokat Toshkent | Askarbekova Partner",
-                metaDescription: "Fuqarolik ishlari bo'yicha professional yuridik yordam. Mol-mulk nizolari, shartnomalar, oilaviy ishlar. 35 yillik tajriba. Bepul dastlabki konsultatsiya.",
+                metaDescription: "Fuqarolik ishlari bo'yicha professional yuridik yordam. Mol-mulk nizolari, shartnomalar, oilaviy ishlar. 35 yillik tajriba.",
                 heroSubtitle: "Mol-mulk nizolari, shartnomalar va boshqa fuqarolik masalalari bo'yicha professional yuridik himoya va sud vakiligi",
                 sections: [
                     {
@@ -77,13 +77,13 @@ export const servicesData: ServicePageData[] = [
                 faq: [
                     { q: "Fuqarolik ishi qancha vaqt davom etadi?", a: "Oddiy fuqarolik ishlari 2-4 oy ichida hal qilinadi. Murakkab holatlar 6 oydan 1 yilgacha davom etishi mumkin. Biz har doim eng tez va samarali yechim topishga harakat qilamiz." },
                     { q: "Sudgacha kelishuv mumkinmi?", a: "Ha, ko'p hollarda biz sudgacha bosqichda nizoni muzokaralar yoki mediatsiya orqali hal qilamiz. Bu vaqt va pul tejaydi." },
-                    { q: "Dastlabki konsultatsiya pullikmi?", a: "Yo'q, dastlabki konsultatsiya bepul. Biz sizning vaziyatingizni tahlil qilamiz va eng to'g'ri yechimni taklif qilamiz." },
+                    { q: "Dastlabki konsultatsiya pullikmi?", a: "Ha, dastlabki konsultatsiya pullik. Biz sizning vaziyatingizni tahlil qilamiz va eng to'g'ri yechimni taklif qilamiz." },
                 ],
             },
             ru: {
                 title: "Гражданские дела",
                 metaTitle: "Адвокат по гражданским делам Ташкент | Аскарбекова Партнер",
-                metaDescription: "Профессиональная юридическая помощь по гражданским делам в Ташкенте. Имущественные, договорные споры, представительство в суде. 35 лет опыта. Бесплатная консультация.",
+                metaDescription: "Профессиональная юридическая помощь по гражданским делам в Ташкенте. Имущественные, договорные споры, представительство в суде. 35 лет опыта.",
                 heroSubtitle: "Профессиональная правовая защита и представительство в суде по имущественным спорам, договорам и другим гражданским делам",
                 sections: [
                     {
@@ -110,13 +110,13 @@ export const servicesData: ServicePageData[] = [
                 faq: [
                     { q: "Сколько длится гражданское дело?", a: "Простые гражданские дела разрешаются за 2-4 месяца. Сложные случаи могут занять от 6 месяцев до 1 года. Мы всегда стремимся найти максимально быстрое и эффективное решение." },
                     { q: "Возможно ли досудебное урегулирование?", a: "Да, во многих случаях мы разрешаем спор на досудебном этапе путём переговоров или медиации. Это экономит время и средства." },
-                    { q: "Первичная консультация платная?", a: "Нет, первичная консультация бесплатная. Мы проанализируем вашу ситуацию и предложим оптимальное решение." },
+                    { q: "Первичная консультация платная?", a: "Да, первичная консультация платная. Мы проанализируем вашу ситуацию и предложим оптимальное решение." },
                 ],
             },
             en: {
                 title: "Civil Cases",
                 metaTitle: "Civil Cases Lawyer Tashkent | Askarbekova Partner",
-                metaDescription: "Professional legal assistance in civil cases in Tashkent. Property disputes, contracts, court representation. 35 years of experience. Free initial consultation.",
+                metaDescription: "Professional legal assistance in civil cases in Tashkent. Property disputes, contracts, court representation. 35 years of experience.",
                 heroSubtitle: "Professional legal protection and court representation in property disputes, contracts and other civil matters",
                 sections: [
                     {
@@ -143,7 +143,7 @@ export const servicesData: ServicePageData[] = [
                 faq: [
                     { q: "How long does a civil case take?", a: "Simple civil cases are resolved within 2-4 months. Complex cases can take from 6 months to 1 year. We always strive to find the fastest and most effective solution." },
                     { q: "Is pre-trial settlement possible?", a: "Yes, in many cases we resolve disputes at the pre-trial stage through negotiations or mediation. This saves time and money." },
-                    { q: "Is the initial consultation free?", a: "Yes, the initial consultation is free. We will analyze your situation and suggest the best solution." },
+                    { q: "Is the initial consultation free?", a: "No, the initial consultation is paid. We will analyze your situation and suggest the best solution." },
                 ],
             },
         },
@@ -490,7 +490,7 @@ export const servicesData: ServicePageData[] = [
             uz: {
                 title: "Meros masalalari",
                 metaTitle: "Meros masalalari bo'yicha advokat Toshkent | Askarbekova Partner",
-                metaDescription: "Meros masalalari bo'yicha professional yuridik yordam. Vasiyatnomalar, meros nizolari, hujjatlar tayyorlash. 35 yillik tajriba. Bepul konsultatsiya.",
+                metaDescription: "Meros masalalari bo'yicha professional yuridik yordam. Vasiyatnomalar, meros nizolari, hujjatlar tayyorlash. 35 yillik tajriba.",
                 heroSubtitle: "Meros masalalari bo'yicha konsultatsiya, hujjatlar tayyorlash va nizolarni professional hal qilish",
                 sections: [
                     {
@@ -523,7 +523,7 @@ export const servicesData: ServicePageData[] = [
             ru: {
                 title: "Наследственные споры",
                 metaTitle: "Адвокат по наследственным делам Ташкент | Аскарбекова Партнер",
-                metaDescription: "Профессиональная юридическая помощь по наследственным делам. Завещания, наследственные споры, подготовка документов. 35 лет опыта. Бесплатная консультация.",
+                metaDescription: "Профессиональная юридическая помощь по наследственным делам. Завещания, наследственные споры, подготовка документов. 35 лет опыта.",
                 heroSubtitle: "Консультации по наследственным вопросам, подготовка документов и профессиональное разрешение споров",
                 sections: [
                     {
@@ -556,7 +556,7 @@ export const servicesData: ServicePageData[] = [
             en: {
                 title: "Inheritance Disputes",
                 metaTitle: "Inheritance Lawyer Tashkent | Askarbekova Partner",
-                metaDescription: "Professional legal assistance in inheritance matters. Wills, inheritance disputes, document preparation. 35 years of experience. Free consultation.",
+                metaDescription: "Professional legal assistance in inheritance matters. Wills, inheritance disputes, document preparation. 35 years of experience.",
                 heroSubtitle: "Consultations on inheritance matters, document preparation and professional dispute resolution",
                 sections: [
                     {

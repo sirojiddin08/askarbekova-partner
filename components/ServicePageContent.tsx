@@ -33,7 +33,7 @@ const ctaText = {
   uz: {
     featuresTitle: "Xizmatlar doirasi",
     ctaTitle: "Bepul konsultatsiya",
-    ctaDesc: "Birinchi konsultatsiya bepul. Hoziroq qo'ng'iroq qiling!",
+    ctaDesc: "Hoziroq qo'ng'iroq qiling!",
     ctaButton: "Qo'ng'iroq qilish",
     faqTitle: "Ko'p beriladigan savollar",
     faqSubtitle: "Ushbu xizmat bo'yicha eng ko'p beriladigan savollar va javoblar",
@@ -45,7 +45,7 @@ const ctaText = {
   ru: {
     featuresTitle: "Спектр услуг",
     ctaTitle: "Бесплатная консультация",
-    ctaDesc: "Первая консультация бесплатная. Позвоните прямо сейчас!",
+    ctaDesc: "Позвоните прямо сейчас!",
     ctaButton: "Позвонить",
     faqTitle: "Часто задаваемые вопросы",
     faqSubtitle: "Ответы на наиболее частые вопросы по данной услуге",
@@ -57,7 +57,7 @@ const ctaText = {
   en: {
     featuresTitle: "Scope of Services",
     ctaTitle: "Free Consultation",
-    ctaDesc: "First consultation is free. Call us now!",
+    ctaDesc: "Call us now!",
     ctaButton: "Call Now",
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "Answers to the most common questions about this service",

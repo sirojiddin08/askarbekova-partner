@@ -25,7 +25,7 @@ export default function BlogPostContent({ post }: Props) {
       tags: "Teglar",
       needHelp: "Yuridik yordam kerakmi?",
       helpText:
-        "Agar sizda shunga o'xshash muammo bo'lsa yoki professional advokat maslahati kerak bo'lsa, bizga qo'ng'iroq qiling. Dastlabki konsultatsiya bepul.",
+        "Agar sizda shunga o'xshash muammo bo'lsa yoki professional advokat maslahati kerak bo'lsa, bizga qo'ng'iroq qiling.",
       callNow: "Hoziroq qo'ng'iroq qiling",
     },
     ru: {
@@ -37,7 +37,7 @@ export default function BlogPostContent({ post }: Props) {
       tags: "Теги",
       needHelp: "Нужна юридическая помощь?",
       helpText:
-        "Если у вас похожая проблема или нужна консультация профессионального адвоката, позвоните нам. Первичная консультация бесплатная.",
+        "Если у вас похожая проблема или нужна консультация профессионального адвоката, позвоните нам.",
       callNow: "Позвонить сейчас",
     },
     en: {
@@ -49,7 +49,7 @@ export default function BlogPostContent({ post }: Props) {
       tags: "Tags",
       needHelp: "Need legal help?",
       helpText:
-        "If you have a similar problem or need professional lawyer consultation, call us. Initial consultation is free.",
+        "If you have a similar problem or need professional lawyer consultation, call us.",
       callNow: "Call now",
     },
   };

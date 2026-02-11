@@ -4,7 +4,7 @@ import BlogListing from "@/components/BlogListing";
 export const metadata: Metadata = {
   title: "Blog — Yuridik maslahatlar va maqolalar | Askarbekova Partner",
   description:
-    "Professional advokat maqolalari: jinoyat huquqi, fuqarolik ishlari, meros masalalari, shartnomalar. Bepul yuridik maslahatlar va qo'llanmalar.",
+    "Professional advokat maqolalari: jinoyat huquqi, fuqarolik ishlari, meros masalalari, shartnomalar. Yuridik maslahatlar va qo'llanmalar.",
   keywords: [
     "yuridik blog",
     "advokat maqolalari",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "shartnoma maslahatlari",
     "advokat Toshkent blog",
     "yuridik yangiliklar",
-    "bepul yuridik maslahat",
+    "yuridik maslahat",
   ],
   alternates: {
     canonical: "https://askarbekova-partner.uz/blog",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog — Yuridik maslahatlar va maqolalar | Askarbekova Partner",
     description:
-      "Professional advokat maqolalari: jinoyat huquqi, fuqarolik ishlari, meros masalalari, shartnomalar. Bepul yuridik maslahatlar va qo'llanmalar.",
+      "Professional advokat maqolalari: jinoyat huquqi, fuqarolik ishlari, meros masalalari, shartnomalar. Yuridik maslahatlar va qo'llanmalar.",
     url: "https://askarbekova-partner.uz/blog",
     siteName: "Askarbekova Partner",
     locale: "uz_UZ",

@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
             heading: "Askarbekova Partner — tajribali jinoyat advokatlari",
             paragraphs: [
               "Askarbekova Partner advokatlik firmasi 35 yildan ortiq jinoyat ishlari bo'yicha tajribaga ega. Bizning advokatlarimiz minglab jinoyat ishlarida muvaffaqiyatli himoya ko'rsatgan.",
-              "Biz har bir mijozga individual yondashamiz va eng murakkab vaziyatlarda ham huquqlaringizni himoya qilamiz. Dastlabki konsultatsiya bepul.",
+              "Biz har bir mijozga individual yondashamiz va eng murakkab vaziyatlarda ham huquqlaringizni himoya qilamiz.",
               "Agar sizga yoki yaqinlaringizga jinoyat advokati kerak bo'lsa, bugun bizga qo'ng'iroq qiling: +998 97 778 95 40",
             ],
           },
@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
             heading: "Askarbekova Partner — Experienced Criminal Lawyers",
             paragraphs: [
               "Askarbekova Partner law firm has over 35 years of experience in criminal cases. Our lawyers have successfully defended thousands of clients in criminal matters.",
-              "We apply an individual approach to each client and protect rights even in the most complex situations. Initial consultation is free.",
+              "We apply an individual approach to each client and protect rights even in the most complex situations.",
               "If you or your loved ones need a criminal lawyer, call us today: +998 97 778 95 40",
             ],
           },
@@ -269,7 +269,7 @@ export const blogPosts: BlogPost[] = [
             paragraphs: [
               "Askarbekova Partner advokatlik firmasi meros masalalari bo'yicha keng tajribaga ega. Biz yuzlab meros nizolarini muvaffaqiyatli hal qilganmiz.",
               "Meros masalalari oilaviy munosabatlar bilan bog'liq va ehtiyotkorlik talab qiladi. Biz har bir holatga individual va delikat yondashuvni ta'minlaymiz.",
-              "Agar sizning meros huquqingiz buzilgan bo'lsa yoki meros nizosi bilan duch kelgan bo'lsangiz, bugun bizga qo'ng'iroq qiling: +998 97 778 95 40. Dastlabki konsultatsiya bepul.",
+              "Agar sizning meros huquqingiz buzilgan bo'lsa yoki meros nizosi bilan duch kelgan bo'lsangiz, bugun bizga qo'ng'iroq qiling: +998 97 778 95 40.",
             ],
           },
         ],
@@ -333,7 +333,7 @@ export const blogPosts: BlogPost[] = [
             paragraphs: [
               "Адвокатская фирма Askarbekova Partner имеет обширный опыт в наследственных делах. Мы успешно разрешили сотни наследственных споров.",
               "Наследственные дела связаны с семейными отношениями и требуют деликатности. Мы обеспечиваем индивидуальный и деликатный подход к каждому случаю.",
-              "Если ваше право наследства нарушено или вы столкнулись с наследственным спором, позвоните нам сегодня: +998 97 778 95 40. Первичная консультация бесплатная.",
+              "Если ваше право наследства нарушено или вы столкнулись с наследственным спором, позвоните нам сегодня: +998 97 778 95 40.",
             ],
           },
         ],
@@ -397,7 +397,7 @@ export const blogPosts: BlogPost[] = [
             paragraphs: [
               "Askarbekova Partner law firm has extensive experience in inheritance cases. We have successfully resolved hundreds of inheritance disputes.",
               "Inheritance cases are related to family relationships and require delicacy. We ensure an individual and delicate approach to each case.",
-              "If your inheritance right is violated or you face an inheritance dispute, call us today: +998 97 778 95 40. Initial consultation is free.",
+              "If your inheritance right is violated or you face an inheritance dispute, call us today: +998 97 778 95 40.",
             ],
           },
         ],
@@ -436,10 +436,10 @@ export const blogPosts: BlogPost[] = [
           {
             heading: "Konsultatsiya narxi",
             paragraphs: [
-              "Dastlabki yuridik konsultatsiya narxi odatda 200 000 dan 500 000 so'mgacha. Askarbekova Partner firmamizda birinchi konsultatsiya BEPUL.",
+              "Dastlabki yuridik konsultatsiya narxi odatda 200 000 dan 500 000 so'mgacha. Askarbekova Partner firmamizda maslahatlashuv shartnoma asosida amalga oshiriladi.",
               "Konsultatsiya davomida advokat:",
               "• Muammoingizni chuqur tahlil qiladi\n• Mumkin bo'lgan yechimlarni tushuntiradi\n• Huquqiy pozitsiyangizni baholaydi\n• Keyingi qadamlar bo'yicha maslahat beradi\n• Ish narxi va muddatlari haqida ma'lumot beradi",
-              "Dastlabki konsultatsiya — bu advokat bilan tanishish va ishingiz bo'yicha dastlabki tahlil olish imkoniyati. Shuning uchun biz uni bepul qilamiz.",
+              "Dastlabki konsultatsiya — bu advokat bilan tanishish va ishingiz bo'yicha dastlabki tahlil olish imkoniyati.",
             ],
           },
           {
@@ -472,7 +472,7 @@ export const blogPosts: BlogPost[] = [
             paragraphs: [
               "Askarbekova Partner firmamizda biz shaffof narxlarni ta'minlaymiz. Dastlabki konsultatsiyada sizga aniq tarif va to'lov grafigi beriladi. Hech qanday yashirin to'lovlar yo'q.",
               "Biz har bir mijozga individual yondashuvni ta'minlaymiz va murakkab moddiy vaziyatda bo'lgan mijozlar uchun to'lov rejalarini taklif qilamiz.",
-              "Professional yuridik yordam — bu investitsiya, chunki u sizning huquqlaringizni, mulkingizni va erkinligingizni himoya qiladi. Dastlabki BEPUL konsultatsiya uchun bugun qo'ng'iroq qiling: +998 97 778 95 40",
+              "Professional yuridik yordam — bu investitsiya, chunki u sizning huquqlaringizni, mulkingizni va erkinligingizni himoya qiladi. Dastlabki konsultatsiya uchun bugun qo'ng'iroq qiling: +998 97 778 95 40",
             ],
           },
         ],
@@ -501,10 +501,10 @@ export const blogPosts: BlogPost[] = [
           {
             heading: "Стоимость консультации",
             paragraphs: [
-              "Первичная юридическая консультация обычно стоит от 200 000 до 500 000 сум. В нашей фирме Askarbekova Partner первая консультация БЕСПЛАТНА.",
+              "Первичная юридическая консультация обычно стоит от 200 000 до 500 000 сум. В нашей фирме Askarbekova Partner консультация платная.",
               "Во время консультации адвокат:",
               "• Глубоко анализирует вашу проблему\n• Объясняет возможные решения\n• Оценивает вашу правовую позицию\n• Консультирует по дальнейшим шагам\n• Информирует о стоимости и сроках дела",
-              "Первичная консультация — это возможность познакомиться с адвокатом и получить первичный анализ по вашему делу. Поэтому мы делаем её бесплатной.",
+              "Первичная консультация — это возможность познакомиться с адвокатом и получить первичный анализ по вашему делу.",
             ],
           },
           {
@@ -537,7 +537,7 @@ export const blogPosts: BlogPost[] = [
             paragraphs: [
               "В нашей фирме Askarbekova Partner мы обеспечиваем прозрачные цены. На первой консультации вам будет предоставлен точный тариф и график оплаты. Никаких скрытых платежей.",
               "Мы обеспечиваем индивидуальный подход к каждому клиенту и предлагаем планы оплаты для клиентов в сложной финансовой ситуации.",
-              "Профессиональная юридическая помощь — это инвестиция, так как она защищает ваши права, имущество и свободу. Для первой БЕСПЛАТНОЙ консультации звоните сегодня: +998 97 778 95 40",
+              "Профессиональная юридическая помощь — это инвестиция, так как она защищает ваши права, имущество и свободу. Для консультации звоните сегодня: +998 97 778 95 40",
             ],
           },
         ],
@@ -566,10 +566,10 @@ export const blogPosts: BlogPost[] = [
           {
             heading: "Consultation Cost",
             paragraphs: [
-              "Initial legal consultation usually costs from 200,000 to 500,000 soums. At our firm Askarbekova Partner, the first consultation is FREE.",
+              "Initial legal consultation usually costs from 200,000 to 500,000 soums. At our firm Askarbekova Partner, consultation is paid.",
               "During consultation, the lawyer:",
               "• Deeply analyzes your problem\n• Explains possible solutions\n• Assesses your legal position\n• Advises on next steps\n• Informs about case cost and timelines",
-              "Initial consultation is an opportunity to meet the lawyer and get initial analysis of your case. That's why we make it free.",
+              "Initial consultation is an opportunity to meet the lawyer and get initial analysis of your case.",
             ],
           },
           {
@@ -602,7 +602,7 @@ export const blogPosts: BlogPost[] = [
             paragraphs: [
               "At our firm Askarbekova Partner, we ensure transparent pricing. At the first consultation, you will be provided with exact rates and payment schedule. No hidden fees.",
               "We provide an individual approach to each client and offer payment plans for clients in difficult financial situations.",
-              "Professional legal assistance is an investment, as it protects your rights, property, and freedom. For the first FREE consultation, call today: +998 97 778 95 40",
+              "Professional legal assistance is an investment, as it protects your rights, property, and freedom. For consultation, call today: +998 97 778 95 40",
             ],
           },
         ],
@@ -679,7 +679,7 @@ export const blogPosts: BlogPost[] = [
               "Askarbekova Partner advokatlik firmasi shartnomalarni tayyorlash va ekspertiza qilish bo'yicha katta tajribaga ega. Biz har yili minglab shartnomalarni tekshiramiz va mijozlarimizni million so'mlik yo'qotishlardan saqlaymiz.",
               "Bizning xizmatlar:",
               "• Har qanday turdagi shartnomalarni tayyorlash (savdo, xizmat, mehnat, rent va h.k.)\n• Mavjud shartnomalarni ekspertiza qilish va xavflarni aniqlash\n• Shartnoma muzokaralarida qatnashish\n• Shartnoma nizolarini suddan oldin va sudda hal qilish",
-              "Shartnoma tuzishdan oldin professional maslahat oling. Dastlabki konsultatsiya bepul: +998 97 778 95 40",
+              "Shartnoma tuzishdan oldin professional maslahat oling. Konsultatsiya uchun bog'laning: +998 97 778 95 40",
             ],
           },
         ],
@@ -746,7 +746,7 @@ export const blogPosts: BlogPost[] = [
               "Адвокатская фирма Askarbekova Partner имеет большой опыт в подготовке и экспертизе договоров. Мы ежегодно проверяем тысячи договоров и спасаем наших клиентов от миллионных потерь.",
               "Наши услуги:",
               "• Подготовка любых видов договоров (купли-продажи, услуг, трудовых, аренды и т.д.)\n• Экспертиза существующих договоров и выявление рисков\n• Участие в переговорах по договору\n• Разрешение договорных споров досудебно и в суде",
-              "Получите профессиональную консультацию перед заключением договора. Первичная консультация бесплатная: +998 97 778 95 40",
+              "Получите профессиональную консультацию перед заключением договора. Для консультации свяжитесь с нами: +998 97 778 95 40",
             ],
           },
         ],

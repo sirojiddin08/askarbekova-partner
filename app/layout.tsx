@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         template: "%s | Askarbekova Partner — Лучший адвокат в Ташкенте",
     },
     description:
-        "⭐ Лучший адвокат в Ташкенте с 35-летним опытом. Профессиональная защита по гражданским, уголовным, экономическим делам. Advokat Toshkent — eng yaxshi yuridik xizmatlar. Бесплатная консультация ☎️ +998 97 778 95 40",
+        "⭐ Лучший адвокат в Ташкенте с 35-летним опытом. Профессиональная защита по гражданским, уголовным, экономическим делам. Advokat Toshkent — eng yaxshi yuridik xizmatlar. Консультация ☎️ +998 97 778 95 40",
     keywords: [
         // Приоритетные ключевые слова (наиболее важные)
         "адвокат в ташкенте",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         "правовая защита ташкент",
         "представительство в суде ташкент",
         "адвокат по наследственным делам",
-        "бесплатная юридическая консультация ташкент",
+        "юридическая консультация ташкент",
         "профессиональный адвокат",
         "опытный адвокат ташкент",
         "адвокат 35 лет опыта",
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
         title:
             "Лучший адвокат в Ташкенте — Askarbekova Partner | 35 лет опыта",
         description:
-            "⭐ Лучший адвокат в Ташкенте с 35-летним опытом. Гражданские, уголовные, экономические дела. Eng yaxshi advokat Toshkent. Бесплатная консультация. ☎️ +998 97 778 95 40",
+            "⭐ Лучший адвокат в Ташкенте с 35-летним опытом. Гражданские, уголовные, экономические дела. Eng yaxshi advokat Toshkent. Консультация. ☎️ +998 97 778 95 40",
         images: [
             {
                 url: "/og-image.jpg",
@@ -160,7 +160,7 @@ const jsonLdLegalService = {
     telephone: ["+998977789540", "+998909383836"],
     email: "info@askarbekova-partner.uz",
     description:
-        "⭐ Лучший адвокат в Ташкенте с 35-летним опытом. Профессиональная защита по гражданским, уголовным, экономическим делам. Eng yaxshi advokat Toshkent — yuridik himoya va sud vakiligi. Бесплатная консультация.",
+        "⭐ Лучший адвокат в Ташкенте с 35-летним опытом. Профессиональная защита по гражданским, уголовным, экономическим делам. Eng yaxshi advokat Toshkent — yuridik himoya va sud vakiligi.",
     foundingDate: "1991",
     founder: {
         "@type": "Person",
@@ -294,7 +294,7 @@ const jsonLdFAQ = {
             name: "Suddan oldin maslahat olish mumkinmi?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Ha, biz suddan oldingi bosqichda bepul dastlabki konsultatsiya taqdim etamiz. Bu sizga vaziyatingizni tushunish va to'g'ri qaror qabul qilishga yordam beradi.",
+                text: "Ha, biz suddan oldingi bosqichda dastlabki konsultatsiya taqdim etamiz. Bu sizga vaziyatingizni tushunish va to'g'ri qaror qabul qilishga yordam beradi. Konsultatsiya pullik.",
             },
         },
         {
@@ -600,7 +600,7 @@ export default function RootLayout({
                         `,
                     }}
                 />
-                
+
                 {/* Google Ads Conversion Tracking */}
                 <Script
                     id="google-ads-conversion"
