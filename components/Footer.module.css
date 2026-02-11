@@ -47,7 +47,7 @@
 .brandDesc {
     font-size: 0.9rem;
     line-height: 1.7;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 /* Columns */
@@ -73,7 +73,7 @@
 
 .links a {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     transition: color var(--transition-fast);
     text-decoration: none;
 }
@@ -94,7 +94,7 @@
     align-items: center;
     gap: 10px;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
@@ -120,12 +120,12 @@
 
 .copy {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 .legal {
     font-size: 0.78rem;
-    color: var(--gray-500);
+    color: var(--text-muted);
 }
 
 @media (max-width: 900px) {
