@@ -585,12 +585,12 @@ export default function RootLayout({
             <body>
                 {/* Google Ads Global Site Tag */}
                 <Script
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     src="https://www.googletagmanager.com/gtag/js?id=AW-17856716490"
                 />
                 <Script
                     id="google-ads-init"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     dangerouslySetInnerHTML={{
                         __html: `
                             window.dataLayer = window.dataLayer || [];
@@ -604,7 +604,7 @@ export default function RootLayout({
                 {/* Google Ads Conversion Tracking */}
                 <Script
                     id="google-ads-conversion"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     dangerouslySetInnerHTML={{
                         __html: `
                             function gtag_report_conversion(url) {
