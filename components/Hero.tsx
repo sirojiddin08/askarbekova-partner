@@ -76,7 +76,7 @@ export default function Hero() {
                                 height={750}
                                 priority
                                 quality={85}
-                                sizes="(max-width: 768px) 100vw, 50vw"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                             />
                         </div>
                         <div className={styles.imageOverlay} />
