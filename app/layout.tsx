@@ -277,61 +277,6 @@ const jsonLdLegalService = {
     },
 };
 
-const jsonLdFAQ = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-        {
-            "@type": "Question",
-            name: "Qachon advokat kerak bo'ladi?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Huquqlaringiz buzilganda, sud jarayonida, jinoyat ishi qo'zg'atilganda, mol-mulk nizolarida, meros masalalarida va boshqa yuridik vaziyatlarda advokat sizga kerak bo'ladi.",
-            },
-        },
-        {
-            "@type": "Question",
-            name: "Suddan oldin maslahat olish mumkinmi?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Ha, biz suddan oldingi bosqichda dastlabki konsultatsiya taqdim etamiz. Bu sizga vaziyatingizni tushunish va to'g'ri qaror qabul qilishga yordam beradi. Konsultatsiya pullik.",
-            },
-        },
-        {
-            "@type": "Question",
-            name: "Sudda advokatning ishtiroki shartmi?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Qonunga ko'ra ayrim hollarda advokat ishtiroki majburiy. Professional advokat sizning manfaatlaringizni samarali himoya qilish imkoniyatini sezilarli oshiradi.",
-            },
-        },
-        {
-            "@type": "Question",
-            name: "Nizoni sudsiz hal qilish mumkinmi?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Ha, ko'p hollarda nizoni muzokaralar, mediatsiya yoki sudgacha kelishuv orqali hal qilish mumkin. Bizning advokatlar sudsiz yechimlarga ham yordam beradi.",
-            },
-        },
-        {
-            "@type": "Question",
-            name: "Onlayn murojaat qilish mumkinmi?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Ha, biz onlayn konsultatsiyalar va videokalllar orqali xizmat ko'rsatamiz. Telefon yoki veb-sayt orqali biz bilan bog'lanishingiz mumkin.",
-            },
-        },
-        {
-            "@type": "Question",
-            name: "Maxfiylik saqlanadimi?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Ha, biz maxfiylik tamoyillariga qat'iy rioya qilamiz. Mijozlarimizning barcha ma'lumotlari ishonchli himoyalangan.",
-            },
-        },
-    ],
-};
-
 const jsonLdBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -546,10 +491,6 @@ export default function RootLayout({
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(jsonLdLegalService),
                     }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
                 />
                 <script
                     type="application/ld+json"
