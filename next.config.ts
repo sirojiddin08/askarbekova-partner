@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	trailingSlash: false,
 	compress: true,
 	experimental: {
 		optimizePackageImports: ["react-icons", "framer-motion"],

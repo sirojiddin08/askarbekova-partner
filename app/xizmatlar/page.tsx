@@ -23,11 +23,6 @@ export const metadata: Metadata = {
     ],
     alternates: {
         canonical: `${baseUrl}/xizmatlar`,
-        languages: {
-            "uz-UZ": `${baseUrl}/xizmatlar`,
-            "ru-RU": `${baseUrl}/xizmatlar`,
-            "en-US": `${baseUrl}/xizmatlar`,
-        },
     },
     openGraph: {
         title: "Юридические услуги — Advokat Toshkent | Askarbekova Partner",

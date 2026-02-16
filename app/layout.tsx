@@ -78,12 +78,6 @@ export const metadata: Metadata = {
     publisher: "Askarbekova Partner",
     alternates: {
         canonical: "https://askarbekova-partner.uz",
-        languages: {
-            "uz-UZ": "https://askarbekova-partner.uz",
-            "ru-RU": "https://askarbekova-partner.uz",
-            "en-US": "https://askarbekova-partner.uz",
-            "x-default": "https://askarbekova-partner.uz",
-        },
     },
     openGraph: {
         type: "website",

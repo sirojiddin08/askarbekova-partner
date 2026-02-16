@@ -32,11 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: `${baseUrl}/xizmatlar/${slug}`,
-      languages: {
-        "uz-UZ": `${baseUrl}/xizmatlar/${slug}`,
-        "ru-RU": `${baseUrl}/xizmatlar/${slug}`,
-        "en-US": `${baseUrl}/xizmatlar/${slug}`,
-      },
     },
     openGraph: {
       title: ru.metaTitle,
