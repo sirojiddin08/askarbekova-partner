@@ -116,6 +116,15 @@
     justify-content: space-between;
     padding: 24px 0;
     border-top: 1px solid var(--border-subtle);
+    gap: 20px;
+}
+
+.bottomLeft {
+    flex: 1;
+}
+
+.bottomRight {
+    flex-shrink: 0;
 }
 
 .copy {
@@ -126,6 +135,23 @@
 .legal {
     font-size: 0.78rem;
     color: var(--text-muted);
+}
+
+.createdBy {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.createdBy a {
+    color: var(--gold-500);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.createdBy a:hover {
+    color: var(--gold-400);
 }
 
 @media (max-width: 900px) {
@@ -148,7 +174,16 @@
 
     .bottom {
         flex-direction: column;
-        gap: 8px;
+        gap: 16px;
         text-align: center;
+        align-items: center;
+    }
+
+    .bottomLeft {
+        order: 1;
+    }
+
+    .bottomRight {
+        order: 2;
     }
 }

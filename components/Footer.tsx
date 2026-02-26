@@ -85,10 +85,20 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p className={styles.copy}>
-                        © {currentYear} Askarbekova Partner. {t("footer.rights")}
-                    </p>
-                    <p className={styles.legal}>{t("footer.legal")}</p>
+                    <div className={styles.bottomLeft}>
+                        <p className={styles.copy}>
+                            © {currentYear} Askarbekova Partner. {t("footer.rights")}
+                        </p>
+                        <p className={styles.legal}>{t("footer.legal")}</p>
+                    </div>
+                    <div className={styles.bottomRight}>
+                        <p className={styles.createdBy}>
+                            {t("footer.createdBy")}{" "}
+                            <a href="https://t.me/Sirojiddin_Rahimov" target="_blank" rel="noopener noreferrer">
+                                Sirojiddin
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

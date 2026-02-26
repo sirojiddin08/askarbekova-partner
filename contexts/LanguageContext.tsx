@@ -168,8 +168,9 @@ const translations: Record<Language, any> = {
             description: "Professional advokatlik firmasi — yuridik himoya va sud vakiligi. 35 yillik tajriba.",
             pages: "Sahifalar",
             addressShort: "Navoiy ko'chasi 5, Toshkent",
-            rights: "Barcha huquqlar himoyalangan",
+            rights: "Barcha huhuquqlar himoyalangan",
             legal: "O'zbekiston Respublikasi qonunchiligiga muvofiq faoliyat yuritadi",
+            createdBy: "Dastur tayyorlagan:",
         },
         services: {
             label: "Xizmatlar",
@@ -298,6 +299,7 @@ const translations: Record<Language, any> = {
             addressShort: "ул. Навои 5, Ташкент",
             rights: "Все права защищены",
             legal: "Деятельность осуществляется в соответствии с законодательством Республики Узбекистан",
+            createdBy: "Разработано:",
         },
         services: {
             label: "Услуги",
@@ -441,7 +443,6 @@ const translations: Record<Language, any> = {
             pages: "Pages",
             addressShort: "5 Navoi Street, Tashkent",
             rights: "All rights reserved",
-            legal: "Operating in accordance with the legislation of the Republic of Uzbekistan",
-        },
+            legal: "Operating in accordance with the legislation of the Republic of Uzbekistan",            createdBy: "Developed by:",        },
     },
 };
