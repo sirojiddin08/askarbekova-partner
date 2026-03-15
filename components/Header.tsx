@@ -27,6 +27,7 @@ export default function Header() {
         { label: t("nav.home"), href: isHomePage ? "#hero" : "/#hero" },
         { label: t("nav.about"), href: isHomePage ? "#about" : "/#about" },
         { label: t("nav.services"), href: isHomePage ? "#services" : "/#services" },
+        // { label: t("nav.media"), href: isHomePage ? "#shorts-video" : "/shorts" },
         { label: t("nav.blog"), href: "/blog" },
         { label: t("nav.whyUs"), href: isHomePage ? "#why-us" : "/#why-us" },
         { label: t("nav.team"), href: isHomePage ? "#team" : "/#team" },

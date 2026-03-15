@@ -82,7 +82,7 @@ export default async function ServicePage({ params }: PageProps) {
       "@type": "LegalService",
       name: "Askarbekova Partner",
       url: baseUrl,
-      telephone: "+998712345678",
+      telephone: "+998977789540",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Тошкент шаҳри",
