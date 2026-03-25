@@ -164,7 +164,7 @@ const jsonLdLegalService = {
     },
     address: {
         "@type": "PostalAddress",
-        streetAddress: "Alisher Navoiy shoh ko'chasi, 5, 1-qavat",
+        streetAddress: "ул. Алишера Навои, дом 5, кв. 3.",
         addressLocality: "Toshkent",
         addressRegion: "Toshkent shahri",
         postalCode: "100011",
@@ -172,8 +172,8 @@ const jsonLdLegalService = {
     },
     geo: {
         "@type": "GeoCoordinates",
-        latitude: "41.311081",
-        longitude: "69.279737",
+        latitude: "41.3191673",
+        longitude: "69.264702",
     },
     openingHoursSpecification: [
         {
@@ -186,7 +186,7 @@ const jsonLdLegalService = {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             opens: "14:00",
-            closes: "17:00",
+            closes: "18:00",
         },
     ],
     areaServed: [
@@ -315,7 +315,7 @@ const jsonLdOrganization = {
     },
     address: {
         "@type": "PostalAddress",
-        streetAddress: "Alisher Navoiy shoh ko'chasi, 5, 1-qavat",
+        streetAddress: "ул. Алишера Навои, дом 5, кв. 3.",
         addressLocality: "Toshkent",
         addressRegion: "Toshkent shahri",
         postalCode: "100011",

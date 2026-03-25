@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiPhone, FiMapPin, FiClock, FiMail } from "react-icons/fi";
+import { FiPhone, FiMapPin, FiClock, FiMail, FiNavigation } from "react-icons/fi";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Contact.module.css";
 
@@ -90,6 +90,29 @@ export default function Contact() {
                                 </div>
                             </motion.div>
                         ))}
+
+                        {/* Taxi Card */}
+                        <motion.div
+                            className={`glass-card ${styles.infoCard}`}
+                            variants={fadeUp}
+                            custom={contactInfo.length}
+                        >
+                            <div className={styles.infoIcon}><FiNavigation /></div>
+                            <div className={styles.infoContent}>
+                                <span className={styles.infoLabel}>{t("contact.taxi")}</span>
+                                <span className={styles.infoValue}>{t("contact.taxiDesc")}</span>
+                                <div className={styles.taxiActions}>
+                                    <a
+                                        href="https://taxi.yandex.uz/order?gfrom=41.298817,69.284616&gto=41.319167,69.264702"
+                                        className={`${styles.taxiBtn} ${styles.taxiBtnYandex}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        🚕 {t("contact.taxiYandex")} →
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
                     </motion.div>
 
                     <motion.div
