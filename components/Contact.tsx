@@ -103,7 +103,7 @@ export default function Contact() {
                                 <span className={styles.infoValue}>{t("contact.taxiDesc")}</span>
                                 <div className={styles.taxiActions}>
                                     <a
-                                        href="https://taxi.yandex.uz/order?gfrom=41.298817,69.284616&gto=41.319167,69.264702"
+                                        href="https://yandex.uz/maps/?rtext=~41.3191673,69.264702&rtt=taxi"
                                         className={`${styles.taxiBtn} ${styles.taxiBtnYandex}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
