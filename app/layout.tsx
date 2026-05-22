@@ -580,6 +580,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     }}
                 />
 
+                {/* Clickfraud analytics */}
+                <Script
+                    id="clickfraud-container"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            var _mtm = window._mtm = window._mtm || [];
+                            _mtm.push({ 'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start' });
+                            (function () {
+                                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                                g.src = 'https://stat1.clickfraud.ru/js/container_kEPvsDj2.js'; s.parentNode.insertBefore(g, s);
+                            })();
+                        `,
+                    }}
+                />
+
                 {/* Yandex.Metrika counter */}
                 <Script
                     id="yandex-metrika"
