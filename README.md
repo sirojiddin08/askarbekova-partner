@@ -41,7 +41,7 @@ npm run build
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:9090](http://localhost:9090) in your browser.
 
 ## Project Structure
 
