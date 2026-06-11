@@ -6,7 +6,7 @@ const baseUrl = "https://askarbekova-partner.uz";
 export const metadata: Metadata = {
     title: "Юридические услуги — Advokat Toshkent | Askarbekova Partner",
     description:
-        "Полный перечень юридических услуг: гражданские, уголовные, экономические, административные дела, наследственные споры, юридическая поддержка бизнеса. 35 лет опыта. Бесплатная консультация. Toshkentda barcha turdagi yuridik xizmatlar.",
+        "Полный перечень юридических услуг: гражданские, уголовные, экономические, административные дела, наследственные споры, юридическая поддержка бизнеса. 35 лет опыта. Kонсультация. Toshkentda barcha turdagi yuridik xizmatlar.",
     keywords: [
         "юридические услуги Ташкент",
         "адвокат услуги",

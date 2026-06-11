@@ -32,7 +32,7 @@ const iconMap: Record<string, React.ReactNode> = {
 const ctaText = {
   uz: {
     featuresTitle: "Xizmatlar doirasi",
-    ctaTitle: "Bepul konsultatsiya",
+    ctaTitle: "Konsultatsiya",
     ctaDesc: "Hoziroq qo'ng'iroq qiling!",
     ctaButton: "Qo'ng'iroq qilish",
     faqTitle: "Ko'p beriladigan savollar",
@@ -44,7 +44,7 @@ const ctaText = {
   },
   ru: {
     featuresTitle: "Спектр услуг",
-    ctaTitle: "Бесплатная консультация",
+    ctaTitle: "Kонсультация",
     ctaDesc: "Позвоните прямо сейчас!",
     ctaButton: "Позвонить",
     faqTitle: "Часто задаваемые вопросы",
@@ -56,7 +56,7 @@ const ctaText = {
   },
   en: {
     featuresTitle: "Scope of Services",
-    ctaTitle: "Free Consultation",
+    ctaTitle: "Consultation",
     ctaDesc: "Call us now!",
     ctaButton: "Call Now",
     faqTitle: "Frequently Asked Questions",
