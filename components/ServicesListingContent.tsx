@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   FiHome,
   FiShield,
@@ -31,10 +30,12 @@ const uiText = {
     home: "Bosh sahifa",
     services: "Xizmatlar",
     title: "Yuridik xizmatlarimiz",
-    subtitle: "35 yildan ortiq tajriba bilan barcha turdagi yuridik masalalar bo'yicha professional yordam ko'rsatamiz",
+    subtitle:
+      "35 yildan ortiq tajriba bilan barcha turdagi yuridik masalalar bo'yicha professional yordam ko'rsatamiz",
     arrow: "Batafsil",
     ctaTitle: "Konsultatsiya oling",
-    ctaDesc: "Professional advokatlarimiz sizning masalangizni tahlil qiladi va eng to'g'ri yechimni topadi",
+    ctaDesc:
+      "Professional advokatlarimiz sizning masalangizni tahlil qiladi va eng to'g'ri yechimni topadi",
     ctaButton: "Qo'ng'iroq qilish",
   },
   ru: {
@@ -44,7 +45,8 @@ const uiText = {
     subtitle: "Профессиональная помощь по всем видам юридических вопросов с опытом более 35 лет",
     arrow: "Подробнее",
     ctaTitle: "Получите консультацию",
-    ctaDesc: "Наши профессиональные адвокаты проанализируют вашу ситуацию и найдут оптимальное решение",
+    ctaDesc:
+      "Наши профессиональные адвокаты проанализируют вашу ситуацию и найдут оптимальное решение",
     ctaButton: "Позвонить",
   },
   en: {
@@ -66,14 +68,9 @@ export default function ServicesListingContent() {
 
   return (
     <main>
-      {/* Hero */}
       <section className={styles.listingHero}>
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
               <Link href="/">{ui.home}</Link>
               <span className={styles.separator}>/</span>
@@ -81,31 +78,19 @@ export default function ServicesListingContent() {
             </nav>
             <h1 className={styles.heroTitle}>{ui.title}</h1>
             <p className={styles.heroSubtitle}>{ui.subtitle}</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Services Grid */}
       <section className={styles.gridSection}>
         <div className="container">
           <div className={styles.grid}>
-            {servicesData.map((s, i) => {
+            {servicesData.map((s) => {
               const sContent = s.content[lang];
               return (
-                <motion.div
-                  key={s.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                >
-                  <Link
-                    href={`/xizmatlar/${s.slug}`}
-                    className={styles.card}
-                  >
-                    <div className={styles.cardIcon}>
-                      {iconMap[s.icon]}
-                    </div>
+                <div key={s.slug}>
+                  <Link href={`/xizmatlar/${s.slug}`} className={styles.card}>
+                    <div className={styles.cardIcon}>{iconMap[s.icon]}</div>
                     <h2 className={styles.cardTitle}>{sContent.title}</h2>
                     <p className={styles.cardDesc}>{sContent.heroSubtitle}</p>
 
@@ -122,34 +107,31 @@ export default function ServicesListingContent() {
                       {ui.arrow} <FiArrowRight />
                     </span>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className={styles.ctaSection}>
         <div className="container">
-          <motion.div
-            className={styles.ctaCard}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className={styles.ctaCard}>
             <h2 className={styles.ctaTitle}>{ui.ctaTitle}</h2>
             <p className={styles.ctaDesc}>{ui.ctaDesc}</p>
             <a
               href="tel:+998977789540"
               className={styles.ctaButton}
-              onClick={() => (window as any).gtag_report_conversion?.('tel:+998977789540')}
+              onClick={() =>
+                (window as Window & { gtag_report_conversion?: (url: string) => void }).gtag_report_conversion?.(
+                  "tel:+998977789540"
+                )
+              }
             >
               <FiPhone />
               {ui.ctaButton}
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

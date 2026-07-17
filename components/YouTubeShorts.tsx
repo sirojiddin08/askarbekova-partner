@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { FiExternalLink, FiPlayCircle } from "react-icons/fi";
+import { FiExternalLink, FiPlay, FiPlayCircle } from "react-icons/fi";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
     channelShortsUrl,
@@ -24,6 +24,7 @@ type SectionCopy = {
     fullDescriptionTitle: string;
     openAll: string;
     openChannel: string;
+    playVideo: string;
 };
 
 const copyByLanguage: Record<"uz" | "ru" | "en", SectionCopy> = {
@@ -45,10 +46,12 @@ const copyByLanguage: Record<"uz" | "ru" | "en", SectionCopy> = {
         },
         watchOnPlatform: "YouTube'da ko'rish",
         noVideos: "Tanlangan bo'lim bo'yicha video topilmadi.",
-        embedHint: "Video sayt ichida ochiladi. Agar qurilmada cheklov bo'lsa, YouTube'da to'g'ridan-to'g'ri oching.",
+        embedHint:
+            "Video sayt ichida ochiladi. Agar qurilmada cheklov bo'lsa, YouTube'da to'g'ridan-to'g'ri oching.",
         fullDescriptionTitle: "YouTube description (to'liq)",
         openAll: "Barcha videolarni ko'rish",
         openChannel: "YouTube Shorts kanalini ochish",
+        playVideo: "Videoni ko'rish",
     },
     ru: {
         title: "Видео материалы",
@@ -68,10 +71,12 @@ const copyByLanguage: Record<"uz" | "ru" | "en", SectionCopy> = {
         },
         watchOnPlatform: "Смотреть на YouTube",
         noVideos: "По выбранной категории видео не найдено.",
-        embedHint: "Видео воспроизводится на сайте. При ограничениях откройте ролик напрямую на YouTube.",
+        embedHint:
+            "Видео воспроизводится на сайте. При ограничениях откройте ролик напрямую на YouTube.",
         fullDescriptionTitle: "YouTube description (полный)",
         openAll: "Смотреть все видео",
         openChannel: "Открыть канал YouTube Shorts",
+        playVideo: "Смотреть видео",
     },
     en: {
         title: "Video Materials",
@@ -91,10 +96,12 @@ const copyByLanguage: Record<"uz" | "ru" | "en", SectionCopy> = {
         },
         watchOnPlatform: "Watch On YouTube",
         noVideos: "No videos found for this category.",
-        embedHint: "Video should play in-site. If restricted by device/browser, open directly on YouTube.",
+        embedHint:
+            "Video should play in-site. If restricted by device/browser, open directly on YouTube.",
         fullDescriptionTitle: "YouTube description (full)",
         openAll: "View All Videos",
         openChannel: "Open YouTube Shorts Channel",
+        playVideo: "Play video",
     },
 };
 
@@ -103,11 +110,15 @@ type YouTubeShortsProps = {
 };
 
 function toEmbedUrl(id: string): string {
-    return `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
+    return `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autoplay=1`;
 }
 
 function toWatchUrl(id: string): string {
     return `https://www.youtube.com/shorts/${id}`;
+}
+
+function toThumbUrl(id: string): string {
+    return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 }
 
 export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
@@ -115,6 +126,7 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
     const content = copyByLanguage[language];
 
     const [activeCategory, setActiveCategory] = useState<"all" | ShortCategory>("all");
+    const [isPlaying, setIsPlaying] = useState(false);
 
     const baseVideos = useMemo(
         () => (showAll ? youtubeShorts : youtubeShorts.filter((video) => video.featured)),
@@ -158,11 +170,22 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
 
     const sectionSubtitle = showAll ? content.allSubtitle : content.subtitle;
 
+    const selectVideo = (id: string) => {
+        setActiveVideoId(id);
+        setIsPlaying(false);
+    };
+
     return (
-        <section id="shorts-video" className={`section ${styles.shorts}`} aria-labelledby="shorts-title">
+        <section
+            id="shorts-video"
+            className={`section ${styles.shorts}`}
+            aria-labelledby="shorts-title"
+        >
             <div className="container">
                 <div className="section-header">
-                    <h2 id="shorts-title" className="section-title">{content.title}</h2>
+                    <h2 id="shorts-title" className="section-title">
+                        {content.title}
+                    </h2>
                     <div className="gold-divider" />
                     <p className="section-subtitle">{sectionSubtitle}</p>
                 </div>
@@ -172,10 +195,13 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
                         <button
                             key={key}
                             type="button"
-                            className={`${styles.filterBtn} ${activeCategory === key ? styles.filterBtnActive : ""}`}
+                            className={`${styles.filterBtn} ${
+                                activeCategory === key ? styles.filterBtnActive : ""
+                            }`}
                             onClick={() => {
                                 setActiveCategory(key);
                                 setActiveVideoId(null);
+                                setIsPlaying(false);
                             }}
                         >
                             {content.categories[key]}
@@ -188,20 +214,46 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
                         {activeVideo ? (
                             <>
                                 <div className={styles.playerShell}>
-                                    <iframe
-                                        key={activeVideo.id}
-                                        title="YouTube Shorts video"
-                                        className={styles.player}
-                                        src={toEmbedUrl(activeVideo.id)}
-                                        loading="lazy"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerPolicy="strict-origin-when-cross-origin"
-                                        allowFullScreen
-                                    />
+                                    {isPlaying ? (
+                                        <iframe
+                                            key={activeVideo.id}
+                                            title="YouTube Shorts video"
+                                            className={styles.player}
+                                            src={toEmbedUrl(activeVideo.id)}
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerPolicy="strict-origin-when-cross-origin"
+                                            allowFullScreen
+                                        />
+                                    ) : (
+                                        <button
+                                            type="button"
+                                            className={styles.playerFacade}
+                                            onClick={() => setIsPlaying(true)}
+                                            aria-label={content.playVideo}
+                                        >
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={toThumbUrl(activeVideo.id)}
+                                                alt=""
+                                                className={styles.playerThumb}
+                                                loading="lazy"
+                                                decoding="async"
+                                                width={480}
+                                                height={360}
+                                            />
+                                            <span className={styles.playBadge}>
+                                                <FiPlay />
+                                            </span>
+                                        </button>
+                                    )}
                                 </div>
                                 <div className={styles.activeMeta}>
-                                    <h3 className={styles.activeTitle}>{activeVideo.content[language].title}</h3>
-                                    <p className={styles.activeSummary}>{activeVideo.content[language].summary}</p>
+                                    <h3 className={styles.activeTitle}>
+                                        {activeVideo.content[language].title}
+                                    </h3>
+                                    <p className={styles.activeSummary}>
+                                        {activeVideo.content[language].summary}
+                                    </p>
                                     <p className={styles.embedHint}>{content.embedHint}</p>
                                     <a
                                         href={toWatchUrl(activeVideo.id)}
@@ -216,9 +268,12 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
                                 </div>
 
                                 <div className={styles.descriptionCard}>
-                                    <h4 className={styles.descriptionTitle}>{content.fullDescriptionTitle}</h4>
+                                    <h4 className={styles.descriptionTitle}>
+                                        {content.fullDescriptionTitle}
+                                    </h4>
                                     <pre className={styles.descriptionText}>
-                                        {fullDescription || activeVideo.content[language].summary}
+                                        {fullDescription ||
+                                            activeVideo.content[language].summary}
                                     </pre>
                                 </div>
                             </>
@@ -235,12 +290,20 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
                                     <button
                                         key={video.id}
                                         type="button"
-                                        className={`${styles.videoItem} ${isActive ? styles.videoItemActive : ""}`}
-                                        onClick={() => setActiveVideoId(video.id)}
+                                        className={`${styles.videoItem} ${
+                                            isActive ? styles.videoItemActive : ""
+                                        }`}
+                                        onClick={() => selectVideo(video.id)}
                                     >
-                                        <span className={styles.videoCategory}>{content.categories[video.category]}</span>
-                                        <strong className={styles.videoTitle}>{video.content[language].title}</strong>
-                                        <span className={styles.videoSummary}>{video.content[language].summary}</span>
+                                        <span className={styles.videoCategory}>
+                                            {content.categories[video.category]}
+                                        </span>
+                                        <strong className={styles.videoTitle}>
+                                            {video.content[language].title}
+                                        </strong>
+                                        <span className={styles.videoSummary}>
+                                            {video.content[language].summary}
+                                        </span>
                                         <span className={styles.videoLinkHint}>
                                             <FiExternalLink />
                                             {content.watchOnPlatform}
@@ -258,7 +321,12 @@ export default function YouTubeShorts({ showAll = false }: YouTubeShortsProps) {
                             {content.openAll}
                         </Link>
                     ) : (
-                        <a href={channelShortsUrl} target="_blank" rel="noopener noreferrer" className={styles.moreBtn}>
+                        <a
+                            href={channelShortsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.moreBtn}
+                        >
                             {content.openChannel}
                         </a>
                     )}

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./Team.module.css";
@@ -29,28 +28,15 @@ export default function Team() {
     return (
         <section id="team" className={`section ${styles.team}`}>
             <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="section-header"
-                >
+                <div className="section-header">
                     <h2 className="section-title">{t("team.title")}</h2>
                     <div className="gold-divider" />
                     <p className={styles.teamDescription}>{t("team.description")}</p>
-                </motion.div>
+                </div>
 
                 <div className={styles.grid}>
-                    {teamMembers.map((member, index) => (
-                        <motion.div
-                            key={member.id}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.15 }}
-                            className={styles.card}
-                        >
+                    {teamMembers.map((member) => (
+                        <div key={member.id} className={styles.card}>
                             <div className={styles.imageWrapper}>
                                 <Image
                                     src={member.image}
@@ -58,8 +44,9 @@ export default function Team() {
                                     className={styles.image}
                                     width={400}
                                     height={500}
-                                    quality={80}
+                                    quality={75}
                                     sizes="(max-width: 768px) 100vw, 33vw"
+                                    loading="lazy"
                                 />
                                 <div className={styles.overlay} />
                                 <div className={styles.info}>
@@ -67,7 +54,7 @@ export default function Team() {
                                     <p className={styles.role}>{t("team.role")}</p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

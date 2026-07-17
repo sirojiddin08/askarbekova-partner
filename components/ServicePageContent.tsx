@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   FiHome,
   FiShield,
@@ -83,14 +82,9 @@ export default function ServicePageContent({ service }: Props) {
 
   return (
     <main>
-      {/* Hero */}
       <section className={styles.serviceHero}>
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
               <Link href="/">{ui.home}</Link>
               <span className={styles.separator}>/</span>
@@ -99,42 +93,27 @@ export default function ServicePageContent({ service }: Props) {
               <span>{content.title}</span>
             </nav>
             <div className={styles.heroContent}>
-              <div className={styles.serviceIcon}>
-                {iconMap[service.icon]}
-              </div>
+              <div className={styles.serviceIcon}>{iconMap[service.icon]}</div>
               <h1 className={styles.heroTitle}>{content.title}</h1>
               <p className={styles.heroSubtitle}>{content.heroSubtitle}</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Content */}
       <section className={styles.contentSection}>
         <div className="container">
           <div className={styles.contentGrid}>
-            <motion.div
-              className={styles.mainContent}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className={styles.mainContent}>
               {content.sections.map((section, i) => (
                 <article key={i} className={styles.textBlock}>
                   <h2>{section.heading}</h2>
                   <p>{section.text}</p>
                 </article>
               ))}
-            </motion.div>
+            </div>
 
-            <motion.aside
-              className={styles.sidebar}
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <aside className={styles.sidebar}>
               <div className={styles.featuresCard}>
                 <h3>{ui.featuresTitle}</h3>
                 {content.features.map((feature, i) => (
@@ -148,45 +127,35 @@ export default function ServicePageContent({ service }: Props) {
               <div className={styles.ctaCard}>
                 <h3>{ui.ctaTitle}</h3>
                 <p>{ui.ctaDesc}</p>
-                <a 
-                  href="tel:+998977789540" 
+                <a
+                  href="tel:+998977789540"
                   className={styles.ctaButton}
-                  onClick={() => (window as any).gtag_report_conversion?.('tel:+998977789540')}
+                  onClick={() =>
+                    (window as Window & { gtag_report_conversion?: (url: string) => void }).gtag_report_conversion?.(
+                      "tel:+998977789540"
+                    )
+                  }
                 >
                   <FiPhone />
                   {ui.ctaButton}
                 </a>
               </div>
-            </motion.aside>
+            </aside>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
       {content.faq.length > 0 && (
         <section className={styles.faqSection}>
           <div className="container">
-            <motion.div
-              className={styles.faqHeader}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div className={styles.faqHeader}>
               <h2>{ui.faqTitle}</h2>
               <p>{ui.faqSubtitle}</p>
-            </motion.div>
+            </div>
 
             <div className={styles.faqList}>
               {content.faq.map((item, i) => (
-                <motion.div
-                  key={i}
-                  className={styles.faqItem}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                >
+                <div key={i} className={styles.faqItem}>
                   <button
                     className={styles.faqQuestion}
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -197,57 +166,31 @@ export default function ServicePageContent({ service }: Props) {
                       className={`${styles.faqChevron} ${openFaq === i ? styles.faqChevronOpen : ""}`}
                     />
                   </button>
-                  <AnimatePresence>
-                    {openFaq === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        role="region"
-                      >
-                        <p className={styles.faqAnswer}>{item.a}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                  {openFaq === i && (
+                    <div role="region">
+                      <p className={styles.faqAnswer}>{item.a}</p>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* Related Services */}
       <section className={styles.relatedSection}>
         <div className="container">
-          <motion.div
-            className={styles.relatedHeader}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className={styles.relatedHeader}>
             <h2>{ui.relatedTitle}</h2>
-          </motion.div>
+          </div>
 
           <div className={styles.relatedGrid}>
-            {relatedServices.map((s, i) => {
+            {relatedServices.map((s) => {
               const sContent = s.content[lang];
               return (
-                <motion.div
-                  key={s.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                >
-                  <Link
-                    href={`/xizmatlar/${s.slug}`}
-                    className={styles.relatedCard}
-                  >
-                    <div className={styles.relatedIcon}>
-                      {iconMap[s.icon]}
-                    </div>
+                <div key={s.slug}>
+                  <Link href={`/xizmatlar/${s.slug}`} className={styles.relatedCard}>
+                    <div className={styles.relatedIcon}>{iconMap[s.icon]}</div>
                     <span className={styles.relatedTitle}>{sContent.title}</span>
                     <span className={styles.relatedDesc}>
                       {sContent.heroSubtitle.substring(0, 100)}...
@@ -256,7 +199,7 @@ export default function ServicePageContent({ service }: Props) {
                       {ui.relatedArrow} <FiArrowRight />
                     </span>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>

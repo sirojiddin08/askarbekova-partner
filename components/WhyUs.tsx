@@ -1,18 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FiCheckCircle, FiLock, FiFileText, FiAward, FiUsers, FiTarget } from "react-icons/fi";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./WhyUs.module.css";
-
-const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: i * 0.15, duration: 0.6 },
-    }),
-};
 
 export default function WhyUs() {
     const { t } = useLanguage();
@@ -59,31 +49,17 @@ export default function WhyUs() {
     return (
         <section id="why-us" className={`section ${styles.whyUs}`} aria-labelledby="whyus-title">
             <div className="container">
-                <motion.div
-                    className="section-header"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
+                <div className="section-header">
                     <span className="section-label">{t("whyUs.label")}</span>
-                    <h2 id="whyus-title" className="section-title">{t("whyUs.title")}</h2>
+                    <h2 id="whyus-title" className="section-title">
+                        {t("whyUs.title")}
+                    </h2>
                     <div className="gold-divider" />
-                </motion.div>
+                </div>
 
-                <motion.div
-                    className={styles.grid}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
+                <div className={styles.grid}>
                     {pillars.map((p, i) => (
-                        <motion.div
-                            key={i}
-                            className={`glass-card ${styles.pillar}`}
-                            variants={fadeUp}
-                            custom={i}
-                        >
+                        <div key={i} className={`glass-card ${styles.pillar}`}>
                             <div
                                 className={styles.pillarIcon}
                                 style={{
@@ -100,9 +76,9 @@ export default function WhyUs() {
                                 className={styles.pillarLine}
                                 style={{ background: `linear-gradient(90deg, ${p.color}, transparent)` }}
                             />
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

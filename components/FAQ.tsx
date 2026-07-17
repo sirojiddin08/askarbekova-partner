@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./FAQ.module.css";
@@ -29,56 +28,40 @@ export default function FAQ() {
     return (
         <section id="faq" className={`section ${styles.faq}`} aria-labelledby="faq-title" role="region">
             <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="section-header"
-                >
+                <div className="section-header">
                     <span className="section-label">{t("faq.label")}</span>
-                    <h2 id="faq-title" className="section-title">{t("faq.title")}</h2>
+                    <h2 id="faq-title" className="section-title">
+                        {t("faq.title")}
+                    </h2>
                     <div className="gold-divider" />
-                </motion.div>
+                </div>
 
                 <div className={styles.list}>
-                    {faqKeys.map((faq, index) => (
-                        <motion.div
-                            key={faq.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.05 }}
-                            className={styles.item}
-                        >
-                            <button
-                                className={`${styles.question} ${
-                                    openId === faq.id ? styles.active : ""
-                                }`}
-                                onClick={() => toggleFAQ(faq.id)}
-                                aria-expanded={openId === faq.id}
-                            >
-                                <span className={styles.questionText}>{t(faq.qKey)}</span>
-                                <span className={styles.icon}>
-                                    {openId === faq.id ? <FiMinus /> : <FiPlus />}
-                                </span>
-                            </button>
+                    {faqKeys.map((faq) => {
+                        const isOpen = openId === faq.id;
+                        return (
+                            <div key={faq.id} className={styles.item}>
+                                <button
+                                    className={`${styles.question} ${isOpen ? styles.active : ""}`}
+                                    onClick={() => toggleFAQ(faq.id)}
+                                    aria-expanded={isOpen}
+                                >
+                                    <span className={styles.questionText}>{t(faq.qKey)}</span>
+                                    <span className={styles.icon}>
+                                        {isOpen ? <FiMinus /> : <FiPlus />}
+                                    </span>
+                                </button>
 
-                            <AnimatePresence>
-                                {openId === faq.id && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className={styles.answerWrapper}
-                                    >
+                                <div
+                                    className={`${styles.answerWrapper} ${isOpen ? styles.answerOpen : ""}`}
+                                >
+                                    <div className={styles.answerInner}>
                                         <div className={styles.answer}>{t(faq.aKey)}</div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.div>
-                    ))}
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

@@ -2,13 +2,27 @@ import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 
-const About = dynamic(() => import("@/components/About"));
-const Services = dynamic(() => import("@/components/Services"));
-const WhyUs = dynamic(() => import("@/components/WhyUs"));
-const Team = dynamic(() => import("@/components/Team"));
-const YouTubeShorts = dynamic(() => import("@/components/YouTubeShorts"));
-const FAQ = dynamic(() => import("@/components/FAQ"));
-const Contact = dynamic(() => import("@/components/Contact"));
+const About = dynamic(() => import("@/components/About"), {
+  loading: () => null,
+});
+const Services = dynamic(() => import("@/components/Services"), {
+  loading: () => null,
+});
+const WhyUs = dynamic(() => import("@/components/WhyUs"), {
+  loading: () => null,
+});
+const Team = dynamic(() => import("@/components/Team"), {
+  loading: () => null,
+});
+const YouTubeShorts = dynamic(() => import("@/components/YouTubeShorts"), {
+  loading: () => null,
+});
+const FAQ = dynamic(() => import("@/components/FAQ"), {
+  loading: () => null,
+});
+const Contact = dynamic(() => import("@/components/Contact"), {
+  loading: () => null,
+});
 
 export const metadata: Metadata = {
   title: "Askarbekova Partner — Профессиональная адвокатская фирма в Ташкенте",

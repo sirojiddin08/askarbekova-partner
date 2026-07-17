@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DynamicLang from "@/components/DynamicLang";
+import DeferredAnalytics from "@/components/DeferredAnalytics";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({
     subsets: ["latin", "cyrillic"],
     variable: "--font-inter",
     display: "swap",
-});
-
-const outfit = Outfit({
-    subsets: ["latin"],
-    variable: "--font-outfit",
-    display: "swap",
+    weight: ["400", "600", "700"],
+    preload: true,
+    adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -124,7 +121,6 @@ export const metadata: Metadata = {
         apple: "/favicon.png",
     },
     verification: {
-        google: "your-google-verification-code",
         yandex: "7c76e5297f4eba62",
     },
     category: "Legal Services",
@@ -472,25 +468,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="uz" suppressHydrationWarning className={`${inter.variable} ${outfit.variable}`}>
+        <html lang="uz" suppressHydrationWarning className={inter.variable}>
             <head>
-                {/* Google Tag Manager */}
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W2PD92RL');`,
-                    }}
-                />
-                {/* End Google Tag Manager */}
                 <link rel="canonical" href="https://askarbekova-partner.uz" />
                 <meta name="geo.region" content="UZ-TAS" />
                 <meta name="geo.placename" content="Tashkent" />
                 <meta name="geo.position" content="41.311081;69.279737" />
                 <meta name="ICBM" content="41.311081, 69.279737" />
                 <meta name="language" content="uz, ru" />
+                <link rel="preconnect" href="https://www.googletagmanager.com" />
+                <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+                <link rel="dns-prefetch" href="https://stat1.clickfraud.ru" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -529,93 +517,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <link rel="apple-touch-icon" href="/logo.png" />
             </head>
             <body>
-                {/* Google Tag Manager (noscript) */}
                 <noscript>
                     <iframe
                         src="https://www.googletagmanager.com/ns.html?id=GTM-W2PD92RL"
                         height="0"
                         width="0"
-                        style={{ display: 'none', visibility: 'hidden' }}
+                        style={{ display: "none", visibility: "hidden" }}
+                        title="Google Tag Manager"
                     />
-                </noscript>
-                {/* End Google Tag Manager (noscript) */}
-
-                {/* Google Ads Global Site Tag */}
-                <Script
-                    strategy="lazyOnload"
-                    src="https://www.googletagmanager.com/gtag/js?id=AW-17856716490"
-                />
-                <Script
-                    id="google-ads-init"
-                    strategy="lazyOnload"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', 'AW-17856716490');
-                        `,
-                    }}
-                />
-
-                {/* Google Ads Conversion Tracking */}
-                <Script
-                    id="google-ads-conversion"
-                    strategy="lazyOnload"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            function gtag_report_conversion(url) {
-                                var callback = function () {
-                                    if (typeof(url) != 'undefined') {
-                                        window.location = url;
-                                    }
-                                };
-                                gtag('event', 'conversion', {
-                                    'send_to': 'AW-17856716490/d_FfCJj9g94bEMq938JC',
-                                    'event_callback': callback
-                                });
-                                return false;
-                            }
-                        `,
-                    }}
-                />
-
-                {/* Clickfraud analytics */}
-                <Script
-                    id="clickfraud-container"
-                    strategy="afterInteractive"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            var _mtm = window._mtm = window._mtm || [];
-                            _mtm.push({ 'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start' });
-                            (function () {
-                                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                                g.src = 'https://stat1.clickfraud.ru/js/container_kEPvsDj2.js'; s.parentNode.insertBefore(g, s);
-                            })();
-                        `,
-                    }}
-                />
-
-                {/* Yandex.Metrika counter */}
-                <Script
-                    id="yandex-metrika"
-                    strategy="lazyOnload"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            (function(m,e,t,r,i,k,a){
-                                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                                m[i].l=1*new Date();
-                                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-                                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-                            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106828326', 'ym');
-                            ym(106828326, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-                        `,
-                    }}
-                />
-                <noscript>
-                    <div>
-                        <img src="https://mc.yandex.ru/watch/106828326" style={{position: 'absolute', left: '-9999px'}} alt="" />
-                    </div>
                 </noscript>
 
                 <LanguageProvider>
@@ -623,6 +532,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <Header />
                     <main>{children}</main>
                     <Footer />
+                    <DeferredAnalytics />
                 </LanguageProvider>
             </body>
         </html>

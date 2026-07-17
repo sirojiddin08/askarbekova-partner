@@ -239,13 +239,30 @@
     height: 44px;
     border-radius: 50%;
     border: 1px solid var(--border-subtle);
-    transition: all var(--transition-fast);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
     text-decoration: none;
+    animation: scrollBounce 2s ease-in-out infinite;
 }
 
 .scrollDown:hover {
     color: var(--gold-500);
     border-color: var(--border-gold);
+}
+
+@keyframes scrollBounce {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scrollDown {
+        animation: none;
+    }
 }
 
 /* ===== Responsive ===== */

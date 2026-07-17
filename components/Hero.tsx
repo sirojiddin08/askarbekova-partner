@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiCalendar, FiArrowDown } from "react-icons/fi";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,11 +10,9 @@ export default function Hero() {
 
     return (
         <section id="hero" className={styles.hero} aria-label="Hero">
-            {/* Background layers */}
             <div className={styles.bgOverlay} />
             <div className={styles.bgGrid} />
 
-            {/* Decorative arcs */}
             <svg className={styles.decorArc1} viewBox="0 0 600 600" fill="none" aria-hidden="true">
                 <circle cx="300" cy="300" r="280" stroke="rgba(201,169,110,0.12)" strokeWidth="1" />
                 <circle cx="300" cy="300" r="200" stroke="rgba(201,169,110,0.08)" strokeWidth="1" />
@@ -23,19 +20,14 @@ export default function Hero() {
             </svg>
 
             <div className={`container ${styles.content}`}>
-                {/* Left: Text block */}
-                <div
-                    className={styles.textBlock}
-                >
+                <div className={styles.textBlock}>
                     <h1 className={styles.title}>
                         {t("hero.title")}{" "}
                         <span className={styles.highlight}>{t("hero.titleHighlight")}</span>{" "}
                         {t("hero.titleEnd")}
                     </h1>
 
-                    <p className={styles.subtitle}>
-                        {t("hero.subtitle")}
-                    </p>
+                    <p className={styles.subtitle}>{t("hero.subtitle")}</p>
 
                     <div className={styles.ctas}>
                         <a href="#contact" className={styles.ctaBtn}>
@@ -62,10 +54,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right: Lawyer photo */}
-                <div
-                    className={styles.imageBlock}
-                >
+                <div className={styles.imageBlock}>
                     <div className={styles.imageWrapper}>
                         <div className={styles.imagePlaceholder}>
                             <Image
@@ -75,8 +64,9 @@ export default function Hero() {
                                 width={600}
                                 height={750}
                                 priority
-                                quality={85}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                fetchPriority="high"
+                                quality={70}
+                                sizes="(max-width: 768px) 100vw, 520px"
                             />
                         </div>
                         <div className={styles.imageOverlay} />
@@ -88,15 +78,9 @@ export default function Hero() {
                 </div>
             </div>
 
-            <motion.a
-                href="#about"
-                className={styles.scrollDown}
-                animate={{ y: [0, 8, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                aria-label="Scroll down"
-            >
+            <a href="#about" className={styles.scrollDown} aria-label="Scroll down">
                 <FiArrowDown />
-            </motion.a>
+            </a>
         </section>
     );
 }
